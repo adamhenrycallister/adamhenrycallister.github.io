@@ -1,0 +1,99 @@
+.homeCenter {
+/*  background-color: black;*/
+  display: flex;
+  margin-top: -80px;
+/*  height: 600px;
+  width: 100vw;*/
+  justify-content: center;
+}
+
+.homeCenterMobile {
+  display: flex;
+  flex-direction: column;
+/*  margin-top: 15vh;*/
+/*  height: 80vh;
+  width: 100vw;*/
+  align-items: center;
+}
+
+.container {
+/*  height: 600px;
+  width: 900px;*/
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+/*  background-color: red;*/
+}
+
+.oval {
+    width: 400px;
+    height: 600px;
+    border-radius: 200px / 300px;
+    background-image: url(../assets/profile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 3;
+    margin-top: 0px;
+ }
+
+ .picBoxMobile {
+    width: 70vw;
+    height: 85vw;
+    border-radius: 35vw / 40vw;
+    background-image: url(../assets/profile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 3;
+    margin-top: 0px;
+ }
+
+ .wordContainer {
+/*  height: 400px;*/
+  align-items: top;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+/*  background-color: red;*/
+/*  display: grid;*/
+ }
+
+ .Name {
+  font-weight: bold;
+  font-size: 4.5em;
+  color: var(--primary-color);
+  margin-top: 100px;
+/*  font-family: 'Passion One', sans-serif;*/
+  margin-bottom: 0em;
+  padding-bottom: 0em;
+  padding-left: .15em;
+ }
+
+ .NameMobile {
+  font-weight: bold;
+  font-size: 2em;
+  color: var(--primary-color);
+/*  font-family: 'Passion One', sans-serif;*/
+  margin-bottom: 0em;
+  padding-bottom: 0em;
+  padding-left: 1em;
+  padding-right: 1em;
+    text-align: center;
+ }
+
+ .intro {
+  font-size: 1.25em;
+  padding-left: 1em;
+  padding-right: 4.5em;
+  margin-top: 0em;
+  padding-top: 1em;
+ }
+
+ .introMobile {
+  font-size: 1em;
+  margin-top: 0em;
+  padding: 1em;
+  text-align: center;
+ }
+

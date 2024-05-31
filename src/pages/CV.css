@@ -1,0 +1,25 @@
+.cv-container {
+  max-width: 800px;  /*Adjust this value as needed */
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--background-color);
+}
+
+.cv-embed {
+  margin: 2rem 0;
+}
+
+.cv-download {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.cv-download:hover {
+  background-color: var(--secondary-color);
+}
