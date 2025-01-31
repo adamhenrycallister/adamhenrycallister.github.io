@@ -36,6 +36,15 @@
 	margin: 0em;
 	padding: 0em;
 	margin-top: 1.5em;
+	margin-bottom: 0em;
+	font-weight: bold;
+}
+
+.coauthors {
+	overflow-wrap: break-word;
+	margin: 0em;
+	padding: 0em;
+	padding-left: 1em;
 	font-weight: bold;
 }
 
