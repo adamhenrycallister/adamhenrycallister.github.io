@@ -9,7 +9,7 @@ function BS0() {
     	<PageNavigator />
     		<p className='heading1'>Black-Scholes Derivative Pricing</p>
     		<p>The famous Black-Scholes equation is used to price derivatives, or financial contracts whose value is determined by the price of another, underlying asset. 
-    		Here, we'll go through the process of deriving the Black-Scholes equation, use it to price a European call option, and talk about how different factors influence deriviative pricing. 
+    		Here, we'll go through the process of deriving the Black-Scholes equation, use it to price a European call option, and talk about how different factors influence derivative pricing. 
     		A working knowledge of first-year calculus is assumed. We'll introduce more advanced topics as needed for the derivation. 
     		To follow along, make sure you are comfortable with the concepts in the "Preliminaries" section. </p>
     		<div style={{ display: "flex", paddingLeft: "10vw"}}>

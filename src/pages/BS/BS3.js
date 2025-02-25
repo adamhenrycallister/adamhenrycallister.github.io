@@ -36,7 +36,7 @@ function BS3() {
 	      	by shorting some number of derivative shares. In other words, I should be able to come up with a ratio of purchased stock shares to shorted derivative shares that will guarantee me a certain (risk-free) return. 
 	      </p>
 	      <p>
-	      	Before we construct our risk-free portfolio, let's find an experession involving the derivative price. Note that the derivative price, <MathJax inline>{"\\(V(S_t,t)\\)"}</MathJax>, is a function of a stochastic process <MathJax inline>{"\\( S_t \\)"}</MathJax>. Thus, 
+	      	Before we construct our risk-free portfolio, let's find an expression involving the derivative price. Note that the derivative price, <MathJax inline>{"\\(V(S_t,t)\\)"}</MathJax>, is a function of a stochastic process <MathJax inline>{"\\( S_t \\)"}</MathJax>. Thus, 
 	        we can apply Ito's lemma to get that
 		      <MathJax>
 		        {`\\[
@@ -50,7 +50,7 @@ function BS3() {
 	      </p>
 	      <p>
 	      Now, for a given number of stock shares, we want to find out how many derivative shares we should short to guarantee us a certain return. To normalize things, let's assume we short
-	       one derivative share and purchase <MathJax inline>{"\\( \\Delta \\)"}</MathJax> shares of stock. The value our investment at time <MathJax inline>{"\\(t\\)"}</MathJax> is given by 
+	       one derivative share and purchase <MathJax inline>{"\\( \\Delta \\)"}</MathJax> shares of stock. The value of our investment at time <MathJax inline>{"\\(t\\)"}</MathJax> is given by 
 	      	<MathJax>
 		        {`\\[
 		          \\Pi = \\Delta S_t - V(S_t, t) \\quad \\quad  \\text{(4)} 
@@ -87,12 +87,12 @@ function BS3() {
      	<div id='no_arbitrage'>
      	  <p className='heading2'>No-Arbitrage Condition</p>
 	      <p>
-	      	Next, we apply a no-arbitrage condition. No-arbitrage requires that two assets with the same payoff in all possible states of the world have the same price. An arbitrage opportunity arises when there are two differently priced 
+	      	Next, we apply a no-arbitrage condition. No arbitrage requires that two assets with the same payoff in all possible states of the world have the same price. An arbitrage opportunity arises when there are two differently priced 
 	      	assets with the same future payoff. Such an opportunity would allow for a risk-free future payoff by simply shorting the overpriced asset and purchasing the underpriced asset. Under no arbitrage, we assume such opportunities do not exist.
 	      </p>
 	      <p>
 	      	Since the portfolio we just constructed 
-	      	is risk-free, no-arbitrage requires that its value matches the price of the risk-free 
+	      	is risk-free, no arbitrage requires that its value matches the price of the risk-free 
 	      	asset at every point in time. Thus, using equation 2, we have that
 	      	<MathJax>
 		        {`\\[

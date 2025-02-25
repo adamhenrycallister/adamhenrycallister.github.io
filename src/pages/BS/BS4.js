@@ -177,7 +177,7 @@ function BS4() {
 			        \\]`}
 			    </MathJax>
 			    Here, as before, <MathJax inline>{"\\( C_{\\tau} \\)"}</MathJax> denotes a constant with respect to <MathJax inline>{"\\( \\tau \\)"}</MathJax>. Putting both expressions for <MathJax inline>{"\\( f \\)"}</MathJax> together 
-			    (i.e., let <MathJax inline>{"\\( C_x = -\\left(\\frac{\\sigma^2}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2 + r\\right)\\tau \\)"}</MathJax> and <MathJax inline>{"\\( C_{\\tau} = \\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)x \\)"}</MathJax>), 
+			    (i.e., letting <MathJax inline>{"\\( C_x = -\\left(\\frac{\\sigma^2}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2 + r\\right)\\tau \\)"}</MathJax> and <MathJax inline>{"\\( C_{\\tau} = \\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)x \\)"}</MathJax>), 
 			    we get 
 			     <MathJax>
 			        {`\\[

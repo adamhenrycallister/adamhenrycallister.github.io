@@ -27,7 +27,7 @@ function BS6() {
 			    </MathJax>
 			    </p>
 			   	<p>
-			   	With the pricing equation in hand, we can see how the current stock price (<MathJax inline>{"\\( S_t \\)"}</MathJax>) the strike price (<MathJax inline>{"\\( K \\)"}</MathJax>) the risk-free rate (<MathJax inline>{"\\( r \\)"}</MathJax>) the stock's volatility (<MathJax inline>{"\\( \\sigma \\)"}</MathJax>) and the time to expiration (<MathJax inline>{"\\( T-t \\)"}</MathJax>) affect 
+			   	With the pricing equation in hand, we can see how the current stock price (<MathJax inline>{"\\( S_t \\)"}</MathJax>), the strike price (<MathJax inline>{"\\( K \\)"}</MathJax>), the risk-free rate (<MathJax inline>{"\\( r \\)"}</MathJax>), the stock's volatility (<MathJax inline>{"\\( \\sigma \\)"}</MathJax>), and the time to expiration (<MathJax inline>{"\\( T-t \\)"}</MathJax>) affect 
 			   		the option price. To do this, we'll take a bunch of derivatives. Before we jump in, let's go over two things that will make life a lot easier: First, recall that the derivative of the standard normal cdf gives us the standard normal pdf, which we'll call <MathJax inline>{"\\( \\phi \\)"}</MathJax>. This looks like
 			   <MathJax>
 			        {`\\[
