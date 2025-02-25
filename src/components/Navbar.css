@@ -40,6 +40,42 @@
   pointer-events: none; /* Prevent hover effect on the active link */
 }
 
+/* Dropdown */
+.dropdown-content {
+    display: none; /* Hide by default */
+    position: absolute;
+    background-color: var(--primary-color);
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    right: 10px;
+}
+
+.dropdown-content li {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.dropdown-content li a {
+    color: var(--background-color);
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    color: var(--accent-color);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /*body {
   margin-top: 2rem;
 }

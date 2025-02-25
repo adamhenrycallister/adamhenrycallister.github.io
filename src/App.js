@@ -1,10 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import CV from './pages/CV';
 import Research from './pages/Research';
-import './App.css';  // Assuming you have some global styles
+import Teaching from './pages/Teaching';
+import './App.css';  
+import routes from "./routes";
 
 function App() {
   return (
@@ -16,6 +18,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cv" element={<CV />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/teaching" element={<Teaching />} />
+            {routes.map(({ path, component }) => {
+              const Component = require(`./pages/BS/${component}`).default;
+              return <Route key={path} path={path} element={<Component />} />;
+            })}
+            <Route path="*" element={<Navigate to="/black_scholes" />} /> 
           </Routes>
         </main>
       </div>
