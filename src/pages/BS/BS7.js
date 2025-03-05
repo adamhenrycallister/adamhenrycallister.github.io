@@ -14,12 +14,12 @@ function BS7() {
   const [sigma, setSigma] = useState(0.5);  // Volatility
   return (
     	<div className='BlackScholes'>
-    	<PageNavigator />
+    	<PageNavigator group="BS"/>
     	<MathJaxContext>
     	<div style={{ display: "flex", justifyContent: "center", alignItems: "center", paddingTop: "20px"}}>
     		<BlackScholesCalculator />
     	</div>
-			<div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", paddingTop: "80px"}}>
+			<div className='graph-container' style={{ paddingTop: "80px"}}>
 			  <PriceGraph K={K} r={r} sigma={sigma} S0={S0} />
 			  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
 			    
@@ -73,7 +73,7 @@ function BS7() {
 		Then see how things change as you increase volatility. Pay attention to how the gap between the stock price and the derivative price changes at the end points.
 		</p>
     	</MathJaxContext>
-    	<PageNavigator />
+    	<PageNavigator group="BS"/>
     	<div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}><NavLink className='BS-link' to="/black_scholes">Contents</NavLink></div>
         </div>
   );

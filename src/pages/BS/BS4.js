@@ -7,14 +7,14 @@ import PageNavigator from "../../components/PageNavigator";
 function BS4() {
   return (
     	<div className='BlackScholes'>
-    	<PageNavigator />
+    	<PageNavigator group="BS"/>
     		<p className='heading1'>Black-Scholes Transformation</p>
     		<MathJaxContext>
     		<div id='Overview'>
 	    		<p className='heading2'>Overview</p>
 	    		<p>
 	    		So far, we've derived the Black-Scholes equation as
-	    		<MathJax>
+	    		<MathJax className='math-container'>
 			        {`\\[
 	    				\\frac{\\partial V}{\\partial t} + \\frac{S_t^2\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial S^2} + rS_t \\frac{\\partial V}{\\partial S} - rV = 0 
 	    				\\quad \\quad \\quad  \\text{(1)}
@@ -23,7 +23,7 @@ function BS4() {
 			    but we still don't have a closed-form solution for the derivative price, <MathJax inline>{"\\( V(S_t, t) \\)"}</MathJax>. To proceed further, we need to turn equation 1 into a PDE that we know how to solve. 
 			    Thus, our next goal is to make equation 1 look like the heat equation, which has a known solution. Recall that for some positive constant <MathJax inline>{"\\( \\alpha \\)"}</MathJax>, 
 			    the one-dimensional heat equation is given by
-		        <MathJax>
+		        <MathJax className='math-container'>
 			        {`\\[
 			          \\frac{\\partial u}{\\partial t} = \\alpha \\frac{\\partial^2 u}{\\partial x^2} \\quad \\quad \\quad \\text{(2)}
 			        \\]`}
@@ -44,7 +44,7 @@ function BS4() {
 		      <p>
 		      First, let's get rid of the extra <MathJax inline>{"\\( S_t \\)"}</MathJax>'s on the <MathJax inline>{"\\( rS_t \\frac{\\partial V}{\\partial S} \\)"}</MathJax> and <MathJax inline>{"\\( \\frac{S_t^2\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial S^2} \\)"}</MathJax> terms in equation 1. We'll 
 		      do this by defining a new variable <MathJax inline>{"\\( x(S) \\)"}</MathJax> that is some function of <MathJax inline>{"\\( S \\)"}</MathJax>. We want to find an <MathJax inline>{"\\( x \\)"}</MathJax> such that 
-		     <MathJax>
+		     <MathJax className='math-container'>
 		        {`\\[
 		          \\begin{aligned}
 		          S_t\\frac{\\partial V}{\\partial S} &= \\frac{\\partial V}{\\partial x(S)} \\\\
@@ -56,7 +56,7 @@ function BS4() {
 		      <p>
 		      This takes care of the <MathJax inline>{"\\( S_t \\)"}</MathJax> on the <MathJax inline>{"\\( rS_t \\frac{\\partial V}{\\partial S} \\)"}</MathJax> term. We also need <MathJax inline>{"\\( x \\)"}</MathJax> to get rid of the <MathJax inline>{"\\( S_t^2 \\)"}</MathJax> on 
 		      the <MathJax inline>{"\\( \\frac{S_t^2\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial S^2} \\)"}</MathJax> term. Let's take another derivative and see what we get
-		     <MathJax>
+		     <MathJax className='math-container'>
 		        {`\\[
 		          \\begin{aligned}
 		          	S_t^2\\frac{\\partial^2 V}{\\partial S^2} &= S_t^2\\frac{\\partial}{\\partial S}\\left(\\frac{1}{S_t}\\frac{\\partial V}{\\partial x}\\right) \\\\
@@ -66,7 +66,7 @@ function BS4() {
 		        \\]`}
 		    </MathJax>
 		    The <MathJax inline>{"\\( S_t^2 \\)"}</MathJax>  term is gone! Now, we can rewrite equation 1 as
-		     <MathJax>
+		     <MathJax className='math-container'>
 		        {`\\[
 		          \\begin{aligned}
 		          	\\frac{\\partial V}{\\partial t} + \\frac{\\sigma^2}{2}\\left(\\frac{\\partial^2 V}{\\partial x^2} - \\frac{\\partial V}{\\partial x}\\right) + r \\frac{\\partial V}{\\partial x} - rV &= 0 \\\\
@@ -88,7 +88,7 @@ function BS4() {
 		      	 or <MathJax inline>{"\\( \\frac{\\partial^2 V}{\\partial x^2} \\)"}</MathJax>. 
 		      	To fix the negative <MathJax inline>{"\\( \\alpha \\)"}</MathJax> problem, let's reverse our time variable by substituting in <MathJax inline>{"\\( t=T-\\tau \\)"}</MathJax>. 
 		      	This gives us 
-		         <MathJax>
+		         <MathJax className='math-container'>
 			        {`\\[
 			          -\\frac{\\partial V}{\\partial \\tau} + \\frac{\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial x^2}
 		    			+ \\frac{\\partial V}{\\partial x}\\left(r - \\frac{\\sigma^2}{2}\\right) - rV = 0 
@@ -97,14 +97,14 @@ function BS4() {
 		      	</p>
 			      <p>
 			      	Now, to get rid of the extra terms, let's rewrite <MathJax inline>{"\\( V \\)"}</MathJax> as 
-			         <MathJax>
+			         <MathJax className='math-container'>
 				        {`\\[
 				          V(S_t, t) = f(x, \\tau)u(x, \\tau)
 				        \\]`}
 				    </MathJax>
 				    What we want to do here is find some functional form for <MathJax inline>{"\\( f(x, \\tau) \\)"}</MathJax> that will get rid of the extra terms in our equation. 
 				    We'll leave the other function, <MathJax inline>{"\\( u(x, \\tau) \\)"}</MathJax>, in general terms. With this new way of writing <MathJax inline>{"\\( V \\)"}</MathJax>, we have
-			     <MathJax>
+			     <MathJax className='math-container'>
 			        {`\\[
 			          \\begin{aligned}
 			          	\\frac{\\partial V}{\\partial \\tau} &=  f\\frac{\\partial u}{\\partial \\tau} + u\\frac{\\partial f}{\\partial \\tau} \\\\ 
@@ -114,7 +114,7 @@ function BS4() {
 			        \\]`}
 			    </MathJax>
 			    Plugging everything in gives us
-			     <MathJax>
+			     <MathJax className='math-container'>
 			        {`\\[
 			          -\\left(f\\frac{\\partial u}{\\partial \\tau} + u\\frac{\\partial f}{\\partial \\tau}\\right) + \\frac{\\sigma^2}{2}\\left(f\\frac{\\partial^2 u}{\\partial x^2} 
 			          + 2\\frac{\\partial u}{\\partial x}\\frac{\\partial f}{\\partial x} + u\\frac{\\partial^2 f}{\\partial x^2}\\right)
@@ -131,7 +131,7 @@ function BS4() {
 			    a term with <MathJax inline>{"\\( \\frac{\\partial u}{\\partial x} \\)"}</MathJax> might interact. But, given that two terms both have <MathJax inline>{"\\( u \\)"}</MathJax>  or both 
 			    have <MathJax inline>{"\\( \\frac{\\partial u}{\\partial x} \\)"}</MathJax>, we can find some functional form for <MathJax inline>{"\\( f \\)"}</MathJax>  that will make the terms cancel. 
 			    Applying this grouping gives us
-			     <MathJax>
+			     <MathJax className='math-container'>
 			        {`\\[
 			        	\\begin{aligned}
 			          \\left(\\frac{-\\partial u}{\\partial \\tau} + \\frac{\\sigma^2}{2}\\frac{\\partial^2 u}{\\partial x^2}\\right)
@@ -143,7 +143,7 @@ function BS4() {
 			    </MathJax>
 			    We want to find some functional form for <MathJax inline>{"\\( f \\)"}</MathJax> that will make <MathJax inline>{"\\( (i) \\)"}</MathJax> and <MathJax inline>{"\\( (ii) \\)"}</MathJax> equal to zero. 
 			    Let's focus on <MathJax inline>{"\\( (i) \\)"}</MathJax> first.
-			     <MathJax>
+			     <MathJax className='math-container'>
 			        {`\\[
 			          \\begin{aligned}
 			          	&\\frac{\\sigma^2}{f}\\frac{\\partial f}{\\partial x} + r - \\frac{\\sigma^2}{2} = 0\\\\
@@ -157,7 +157,7 @@ function BS4() {
 				us what the part of <MathJax inline>{"\\( f \\)"}</MathJax> as a function of <MathJax inline>{"\\( x \\)"}</MathJax> should look like, but we still don't 
 				know what the <MathJax inline>{"\\( \\tau \\)"}</MathJax> part of <MathJax inline>{"\\( f \\)"}</MathJax> should look like. Given what we have so far 
 				for <MathJax inline>{"\\( f \\)"}</MathJax>, our <MathJax inline>{"\\( x \\)"}</MathJax> derivatives should look like
-			    <MathJax>
+			    <MathJax className='math-container'>
 			        {`\\[
 			          \\begin{aligned}
 			          	\\frac{\\partial f}{\\partial x} = f\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right) \\\\
@@ -166,7 +166,7 @@ function BS4() {
 			        \\]`}
 			    </MathJax>
 			    Let's use these expressions in <MathJax inline>{"\\( (ii) \\)"}</MathJax> and set everything equal to zero. 
-			    <MathJax>
+			    <MathJax className='math-container'>
 			        {`\\[
 			          \\begin{aligned}
 			          	&\\frac{\\sigma^2}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2 
@@ -179,13 +179,13 @@ function BS4() {
 			    Here, as before, <MathJax inline>{"\\( C_{\\tau} \\)"}</MathJax> denotes a constant with respect to <MathJax inline>{"\\( \\tau \\)"}</MathJax>. Putting both expressions for <MathJax inline>{"\\( f \\)"}</MathJax> together 
 			    (i.e., letting <MathJax inline>{"\\( C_x = -\\left(\\frac{\\sigma^2}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2 + r\\right)\\tau \\)"}</MathJax> and <MathJax inline>{"\\( C_{\\tau} = \\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)x \\)"}</MathJax>), 
 			    we get 
-			     <MathJax>
+			     <MathJax className='math-container'>
 			        {`\\[
 			          f(x, \\tau) = e^{\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)x -\\left(\\frac{\\sigma^2}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2 + r\\right)\\tau}
 			        \\]`}
 			    </MathJax>
 			    By construction, plugging in this expression for <MathJax inline>{"\\( f \\)"}</MathJax> into our equation 3 will leave us with only the first grouping, or 
-			     <MathJax>
+			     <MathJax className='math-container'>
 			        {`\\[
 			          \\frac{\\partial u}{\\partial \\tau} = \\frac{\\sigma^2}{2}\\frac{\\partial^2 u}{\\partial x^2}
 			        \\]`}
@@ -194,7 +194,7 @@ function BS4() {
 			    </p>
 			</div>
 			</MathJaxContext>
-	    	<PageNavigator />
+	    	<PageNavigator group="BS"/>
 	    	<div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}><NavLink className='BS-link' to="/black_scholes">Contents</NavLink></div>
     	</div>
   );

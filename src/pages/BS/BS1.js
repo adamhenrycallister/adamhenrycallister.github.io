@@ -7,7 +7,7 @@ import PageNavigator from "../../components/PageNavigator";
 function BS1() {
   return (
   	<div className='BlackScholes'>
-    <PageNavigator />
+    <PageNavigator group="BS" />
     <p className='heading1'>Preliminaries</p>
   	<MathJaxContext>
     <div id="change_of_variables">
@@ -18,13 +18,13 @@ function BS1() {
       </p>
       <p>
       In the case of a derivative, we use the chain rule to get
-        <MathJax>
+        <MathJax className='math-container'>
           {`\\[
             \\frac{\\partial f}{\\partial g(x)} = \\frac{\\partial f/\\partial x}{\\partial g(x)/\\partial x}
           \\]`}
         </MathJax>
       For example, if we want to consider <MathJax inline>{"\\( \\log{x} \\)"}</MathJax> rather than <MathJax inline>{"\\( x \\)"}</MathJax>, we can solve for <MathJax inline>{"\\( \\frac{\\partial f}{\\partial x} \\)"}</MathJax> in terms of <MathJax inline>{"\\( \\log{x} \\)"}</MathJax>:
-        <MathJax>
+        <MathJax className='math-container'>
           {`\\[
             \\begin{aligned}
             &\\frac{\\partial f}{\\partial \\log{x}} = \\frac{\\partial f/\\partial x}{\\partial \\log{x}/\\partial x} = x\\frac{\\partial f}{\\partial x} \\\\
@@ -35,19 +35,19 @@ function BS1() {
       </p>
       <p>
       In the case of an integral, we can directly substitute in our new expression for <MathJax inline>{"\\( x \\)"}</MathJax>, but we need to be careful about the bounds and the differential. Consider the following integral:
-      <MathJax>
+      <MathJax className='math-container'>
         {`\\[
           \\int^b_a f(x) dx
         \\]`}
       </MathJax> 
       Suppose we want to rewrite <MathJax inline>{"\\( x \\)"}</MathJax> as some function of a new variable <MathJax inline>{"\\( y \\)"}</MathJax>, or <MathJax inline>{"\\( x = h(y) \\)"}</MathJax>. To do this, we can rewrite the integral as
-      <MathJax>
+      <MathJax className='math-container'>
         {`\\[
           \\int^{h^{-1}(b)}_{h^{-1}(a)} f(h(y)) dh(y)
         \\]`}
       </MathJax> 
       For example, if we wanted to consider the integral in terms of <MathJax inline>{"\\( x = \\log{y} \\)"}</MathJax>, we could write 
-      <MathJax>
+      <MathJax className='math-container'>
         {`\\[
           \\int^{e^b}_{e^a} \\frac{f(\\log{y})}{y} dy
         \\]`}
@@ -65,7 +65,7 @@ function BS1() {
       <p>
       The strategy for finding a closed-form solution for the function of interest in a differential equation depends on how the equation is structured. For our purposes, we will worry only about differential equations of the form <MathJax inline>{"\\( \\frac{d f}{d x} = Af(x) \\)"}</MathJax>, 
       which we can solve as
-        <MathJax>
+        <MathJax className='math-container'>
           {`\\[
             \\begin{aligned}
               &\\frac{d f/ dx}{f(x)} = A \\\\
@@ -87,7 +87,7 @@ function BS1() {
           heat through a medium by relating the temperature at a specific location in the medium as a function 
           of the location's distance from some fixed point, <MathJax inline>{"\\( x \\)"}</MathJax>, and time, <MathJax inline>{"\\( t \\)"}</MathJax>. For a temperature 
           function <MathJax inline>{"\\( u(x,t) \\)"}</MathJax> and a positive constant <MathJax inline>{"\\( \\alpha \\)"}</MathJax>, the one-dimensional heat equation can be written as
-        <MathJax>
+        <MathJax className='math-container'>
             {`\\[
               \\frac{\\partial u}{\\partial t} = \\alpha \\frac{\\partial^2 u}{\\partial x^2}
             \\]`}
@@ -99,13 +99,13 @@ function BS1() {
       <p className='heading2'>Normal Distribution</p>
       <p>
       A normally distributed random variable <MathJax inline>{"\\( \\tilde x \\sim N(\\mu, \\sigma^2)\\)"}</MathJax> has a probability density function (pdf) given by 
-      <MathJax>
+      <MathJax className='math-container'>
           {`\\[
             f(x) = \\frac{e^{\\frac{-(x-\\mu)^2}{2\\sigma^2}}}{\\sqrt{2\\pi \\sigma^2}}
           \\]`}
       </MathJax>
       and a cumulative distribution function (cdf) given by 
-      <MathJax>
+      <MathJax className='math-container'>
           {`\\[
             F(x) = \\int_{-\\infty}^x\\frac{e^{\\frac{-(z-\\mu)^2}{2\\sigma^2}}}{\\sqrt{2\\pi \\sigma^2}}dz
           \\]`}
@@ -114,7 +114,7 @@ function BS1() {
       </p>
       <p>
       A standard normal random variable has mean 0 and variance 1, which reduces the pdf and cdf to 
-        <MathJax>
+        <MathJax className='math-container'>
           {`\\[
             \\begin{aligned}
               \\phi(x) &= \\frac{e^{\\frac{-x^2}{2}}}{\\sqrt{2\\pi}} \\\\
@@ -142,7 +142,7 @@ function BS1() {
       we apply the following to each argument of <MathJax inline>{"\\( f \\)"}</MathJax>: (1) differentiate <MathJax inline>{"\\( f \\)"}</MathJax> with respect to the argument, 
       (2) differentiate the argument with respect to <MathJax inline>{"\\( t \\)"}</MathJax>, and (3) take the product of (1) and (2). After calculating (3) for each argument, we sum up all the products to get the partial derivative. 
       This looks like
-          <MathJax>
+          <MathJax className='math-container'>
             {`\\[
               \\begin{aligned}
                 \\frac{\\partial f(x(t), y(t), t)}{\\partial t} &= \\frac{\\partial f}{\\partial x}\\frac{\\partial x}{\\partial t} + \\frac{\\partial f}{\\partial y}\\frac{\\partial y}{\\partial t} + \\frac{\\partial f}{\\partial t}\\frac{\\partial t}{\\partial t} \\\\
@@ -163,7 +163,7 @@ function BS1() {
       </p>
     </div>
     </MathJaxContext>
-    <PageNavigator />
+    <PageNavigator group="BS"/>
     </div>
   );
 }

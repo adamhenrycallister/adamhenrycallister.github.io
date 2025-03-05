@@ -6,7 +6,7 @@ import PageNavigator from "../../components/PageNavigator";
 function BS0() {
   return (
     	<div className='BlackScholes'>
-    	<PageNavigator />
+    	<PageNavigator group="BS" />
     		<p className='heading1'>Black-Scholes Derivative Pricing</p>
     		<p>The famous Black-Scholes equation is used to price derivatives, or financial contracts whose value is determined by the price of another, underlying asset. 
     		Here, we'll go through the process of deriving the Black-Scholes equation, use it to price a European call option, and talk about how different factors influence derivative pricing. 
@@ -72,7 +72,7 @@ function BS0() {
                 </div>
             </ul>
             </div>
-    	<PageNavigator />
+    	<PageNavigator group="BS"/>
         </div>
   );
 }

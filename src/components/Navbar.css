@@ -45,7 +45,7 @@
     display: none; /* Hide by default */
     position: absolute;
     background-color: var(--primary-color);
-    min-width: 150px;
+    min-width: 170px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding-top: 20px;

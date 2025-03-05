@@ -13,7 +13,7 @@ function BS2() {
   const [S0, setS0] = useState(120);  // Initial value
   return (
     	<div className='BlackScholes'>
-    	<PageNavigator />
+    	<PageNavigator group="BS" />
     	<MathJaxContext>
     	<p className='heading1'>Stochastic Calculus</p>
     	<div id = 'brownian_motion'>
@@ -52,7 +52,7 @@ function BS2() {
     		</p>
     		<p>
     		Suppose we know that some random, time-varying quantity of interest, <MathJax inline>{"\\( X_t\\)"}</MathJax>, evolves through time according to the stochastic differential equation
-    		<MathJax>
+    		<MathJax className='math-container'>
 	          {`\\[
 	            dX_t = \\mu\\left(X_t, t\\right)dt + \\sigma\\left(X_t, t\\right)d W_t
 	          \\]`}
@@ -62,7 +62,7 @@ function BS2() {
       		</p>
       		<p>
       		Now, suppose we are interested in the random variable <MathJax inline>{"\\( f\\left(X_t, t\\right)\\)"}</MathJax>, which is some function of <MathJax inline>{"\\( X_t\\)"}</MathJax> and time. Ito's lemma gives us that
-    		<MathJax>
+    		<MathJax className='math-container'>
 	          {`\\[
 	            df\\left(X_t, t\\right) = \\left(\\frac{\\partial f}{\\partial t} + \\mu \\frac{\\partial f}{\\partial X} + \\frac{\\sigma^2}{2}\\frac{\\partial^2 f}{\\partial X^2}\\right) + \\sigma \\frac{\\partial f}{\\partial X}d W_t
 	          \\]`}
@@ -73,7 +73,7 @@ function BS2() {
 	    	<p className='heading2'>Geometric Brownian Motion</p>
 	    	<p>
 	    	To see how Ito's lemma works, let's go through the process of solving for Geometric Brownian Motion (GBM). GBM evolves according to the stochastic differential equation
-    		<MathJax>
+    		<MathJax className='math-container'>
 	          {`\\[
 	            dX_t = X_t \\bar \\mu dt + X_t \\bar \\sigma d W_t
 	          \\]`}
@@ -83,7 +83,7 @@ function BS2() {
       		<p>
       		Suppose this differential equation wasn't stochastic, or we just had <MathJax inline>{"\\( d X_t = X_t (\\bar \\mu + \\bar \\sigma)dt \\)"}</MathJax>. In this familiar case, 
       		we could separate <MathJax inline>{"\\( X_t \\)"}</MathJax> and <MathJax inline>{"\\( t \\)"}</MathJax> to get
-       		<MathJax>
+       		<MathJax className='math-container'>
 	          {`\\[
 	          	\\begin{aligned}
 	            	&\\frac{d X_t}{X_t} = (\\bar \\mu + \\bar \\sigma)dt \\\\
@@ -95,13 +95,13 @@ function BS2() {
       		</MathJax>
       		Because of the stochastic component, we can't say that <MathJax inline>{"\\( \\frac{d X_t}{X_t} = d(\\log{(X_t)}) \\)"}</MathJax>. Instead, we have to use Ito's Lemma to find an expression for <MathJax inline>{"\\( d(\\log{(X_t)}) \\)"}</MathJax>. 
       		Let <MathJax inline>{"\\( f(X_t) = \\log{(X_t)} \\)"}</MathJax>, and note that, in terms of Ito's Lemma, 
-    		<MathJax>
+    		<MathJax className='math-container'>
 	          {`\\[
 	             dX_t = \\overbrace{X_t \\bar \\mu}^{=\\mu(X_t,t)} dt + \\overbrace{X_t \\bar \\sigma}^{=\\sigma(X_t,t)} d W_t
 	          \\]`}
       		</MathJax>     
       		then we have 
-       		<MathJax>
+       		<MathJax className='math-container'>
 	          {`\\[
 	          	\\begin{aligned}
 	            	d f(X_t) &= \\left(X_t \\bar \\mu \\frac{\\partial f}{\\partial X} + \\frac{{X_t^2 \\bar \\sigma}^2}{2}\\frac{\\partial^2 f}{\\partial X^2}\\right)dt + X_t \\bar \\sigma \\frac{\\partial f}{\\partial X}dW_t \\\\
@@ -110,7 +110,7 @@ function BS2() {
 	          \\]`}
       		</MathJax>  
       		Now, we can integrate both sides to get 
-       		<MathJax>
+       		<MathJax className='math-container'>
 	          {`\\[
 	          	\\begin{aligned}
 	            	&f(X_t) - f(X_0) = \\left(\\bar \\mu - \\frac{\\bar \\sigma^2}{2}\\right)t + \\bar \\sigma W_t \\\\
@@ -120,7 +120,7 @@ function BS2() {
 	          \\]`}
       		</MathJax> 		
       		</p>
-			<div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row" }}>
+			<div className='graph-container'>
 			  <GBMChart mu={mu} sigma={sigma} S0={S0} />
 			  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
 			    
@@ -162,7 +162,7 @@ function BS2() {
     	<p>We'll use GBM to model the price of the underlying stock in the derivation of the Black-Scholes equation. 
     	Take some time to see how varying the drift parameter, the volatility parameter, and the initial value affects the path of GBM in the above graph.</p>
     	</MathJaxContext>
-    	<PageNavigator />
+    	<PageNavigator group="BS" />
     	<div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}><NavLink className='BS-link' to="/black_scholes">Contents</NavLink></div>
         </div>
   );

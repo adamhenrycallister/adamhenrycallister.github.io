@@ -2,13 +2,14 @@ import { Link, useLocation } from "react-router-dom";
 import routes from "../routes"; // Import routes
 import './PageNavigator.css';
 
-const PageNavigator = () => {
+const PageNavigator = ({ group }) => {
   const location = useLocation(); // Get current URL
-  const currentIndex = routes.findIndex((route) => route.path === location.pathname);
+  const groupRoutes = routes.filter(route => route.group === group);
+  const currentIndex = groupRoutes.findIndex((route) => route.path === location.pathname);
 
   // Get previous and next pages
-  const prevPage = currentIndex > 0 ? routes[currentIndex - 1] : null;
-  const nextPage = currentIndex < routes.length - 1 ? routes[currentIndex + 1] : null;
+  const prevPage = currentIndex > 0 ? groupRoutes[currentIndex - 1] : null;
+  const nextPage = currentIndex < groupRoutes.length - 1 ? groupRoutes[currentIndex + 1] : null;
 
   return (
     <div className="page-navigator">

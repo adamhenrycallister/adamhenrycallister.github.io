@@ -19,8 +19,8 @@ function App() {
             <Route path="/cv" element={<CV />} />
             <Route path="/research" element={<Research />} />
             <Route path="/teaching" element={<Teaching />} />
-            {routes.map(({ path, component }) => {
-              const Component = require(`./pages/BS/${component}`).default;
+            {routes.map(({ path, component, group }) => {
+              const Component = require(`./pages/${group}/${component}`).default;
               return <Route key={path} path={path} element={<Component />} />;
             })}
             <Route path="*" element={<Navigate to="/black_scholes" />} /> 

@@ -7,7 +7,7 @@ import PageNavigator from "../../components/PageNavigator";
 function BS3() {
   return (
     	<div className='BlackScholes'>
-    	<PageNavigator />
+    	<PageNavigator group="BS"/>
     		<p className='heading1'>The Black-Scholes Equation</p>
     		<MathJaxContext>
     	<div id='setup'>
@@ -17,7 +17,7 @@ function BS3() {
 	      	 follows geometric Brownian motion (GBM), and there is a risk-free bond with continuously compounding
 	      	  interest at a rate of <MathJax inline>{"\\(r\\)"}</MathJax>. This gives us the following differential equations for the stock
 	      	   and bond prices:
-		      <MathJax>
+		      <MathJax className='math-container'>
 		        {`\\[
 		          \\begin{aligned}
 		            dS_t &= S_t \\mu dt + S_t \\sigma dW_t \\quad  &\\text{(1)} \\\\
@@ -38,7 +38,7 @@ function BS3() {
 	      <p>
 	      	Before we construct our risk-free portfolio, let's find an expression involving the derivative price. Note that the derivative price, <MathJax inline>{"\\(V(S_t,t)\\)"}</MathJax>, is a function of a stochastic process <MathJax inline>{"\\( S_t \\)"}</MathJax>. Thus, 
 	        we can apply Ito's lemma to get that
-		      <MathJax>
+		      <MathJax className='math-container'>
 		        {`\\[
 		          \\begin{aligned}
 		            d V(S_t, t) = \\left(\\frac{\\partial V}{\\partial t} + S_t \\mu \\frac{\\partial V}{\\partial S} 
@@ -51,20 +51,20 @@ function BS3() {
 	      <p>
 	      Now, for a given number of stock shares, we want to find out how many derivative shares we should short to guarantee us a certain return. To normalize things, let's assume we short
 	       one derivative share and purchase <MathJax inline>{"\\( \\Delta \\)"}</MathJax> shares of stock. The value of our investment at time <MathJax inline>{"\\(t\\)"}</MathJax> is given by 
-	      	<MathJax>
+	      	<MathJax className='math-container'>
 		        {`\\[
 		          \\Pi = \\Delta S_t - V(S_t, t) \\quad \\quad  \\text{(4)} 
 		        \\]`}
 		    </MathJax>
 		    This value evolves according to the differential equation
-	      	<MathJax>
+	      	<MathJax className='math-container'>
 		        {`\\[
 		          d \\Pi = \\Delta d S_t - d V(S_t, t)
 		        \\]`}
 		    </MathJax>
 		    Plugging in for <MathJax inline>{"\\( d S_t \\)"}</MathJax> in equation 1 and using our expression
 		     for <MathJax inline>{"\\( d V(S_t, t) \\)"}</MathJax> in equation 3, we get
-	      	<MathJax>
+	      	<MathJax className='math-container'>
 		        {`\\[
 		              d \\Pi = \\left(\\Delta S_t \\mu - \\frac{\\partial V}{\\partial t} - S_t \\mu \\frac{\\partial V}{\\partial S} - 
 		              \\frac{S_t^2\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial S^2}\\right)dt + \\left(\\Delta S_t \\sigma 
@@ -74,7 +74,7 @@ function BS3() {
 		    Now, we can choose <MathJax inline>{"\\( \\Delta \\)"}</MathJax> to eliminate the stochastic component of the portfolio return
 		     <MathJax inline>{"\\( \\left(\\left(\\Delta S_t \\sigma - S_t \\sigma \\frac{\\partial V}{\\partial S}\\right)dW_t\\right) \\)"}</MathJax> and make the return risk-free.
 		      To do this, we must have that 
-		      <MathJax>
+		      <MathJax className='math-container'>
 		        {`\\[
 		          \\begin{aligned}
 		            \\Delta S_t \\sigma = S_t \\sigma \\frac{\\partial V}{\\partial S} \\\\
@@ -94,20 +94,20 @@ function BS3() {
 	      	Since the portfolio we just constructed 
 	      	is risk-free, no arbitrage requires that its value matches the price of the risk-free 
 	      	asset at every point in time. Thus, using equation 2, we have that
-	      	<MathJax>
+	      	<MathJax className='math-container'>
 		        {`\\[
 		          d\\Pi = r\\Pi dt
 		        \\]`}
 		    </MathJax>
 		    Plugging in equation 5 for <MathJax inline>{"\\( d \\Pi \\)"}</MathJax> and equation 4 for <MathJax inline>{"\\( \\Pi \\)"}</MathJax> gives us
-	      	<MathJax>
+	      	<MathJax className='math-container'>
 		        {`\\[
 		          \\left(\\Delta S_t \\mu - \\frac{\\partial V}{\\partial t} - S_t \\mu \\frac{\\partial V}{\\partial S} - \\frac{S_t^2\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial S^2}\\right)dt
 		           + \\left(\\Delta S_t \\sigma - S_t \\sigma \\frac{\\partial V}{\\partial S}\\right)dW_t  = r\\left(\\Delta S_t - V\\right)dt
 		        \\]`}
 		    </MathJax>
 		    We can also plug in <MathJax inline>{"\\( \\Delta = \\frac{\\partial V}{\\partial S} \\)"}</MathJax>
-	      	<MathJax>
+	      	<MathJax className='math-container'>
 		        {`\\[
 		        	\\begin{aligned}
 		 				\\left(S_t \\mu \\frac{\\partial V}{\\partial S} - \\frac{\\partial V}{\\partial t} - S_t \\mu \\frac{\\partial V}{\\partial S} - \\frac{S_t^2\\sigma^2}{2}\\frac{\\partial^2 V}{\\partial S^2}\\right)dt  
@@ -124,7 +124,7 @@ function BS3() {
 	      </p>
      	</div>
     		</MathJaxContext>
-    	<PageNavigator />
+    	<PageNavigator group="BS"/>
 		<div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}><NavLink className='BS-link' to="/black_scholes">Contents</NavLink></div>
         </div>
   );
