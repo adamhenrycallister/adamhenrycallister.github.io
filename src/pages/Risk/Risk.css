@@ -1,0 +1,96 @@
+.Risk {
+  overflow-wrap: break-word;
+/*  overflow-y: scroll;*/
+  display: flex;
+  flex-direction: column;
+/*  padding-top: 5.5em;*/
+  padding-left: 5vw;
+  padding-right: 5vw;
+/*  background-color: red;*/
+}
+
+
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  gap: 5px;
+}
+
+@media (max-width: 870px) { /* Adjust breakpoint as needed */
+  .graph-container {
+    flex-direction: column; /* Change to column on small screens */
+    align-items: center; /* Center children when stacked */
+  }
+}
+
+.math-container {
+  overflow-y: hidden;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents equation from breaking into multiple lines */
+  max-width: 100%; /* Ensures it fits within the parent container */
+}
+
+.toc-list {
+  list-style: none;
+}
+
+.heading1 {
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.heading2 {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: left;
+}
+
+.Risk-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.inline-link {
+  display: inline;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.inline-link:hover {
+  color: var(--accent-color);
+}
+
+.Risk-content {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 2px;
+}
+
+.content-group {
+  padding: 10px;
+}
+
+.input-bars {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.Risk-link:hover {
+  color: var(--accent-color);
+}
+
+.text {
+	overflow-wrap: break-word;
+	padding-left: 1em;
+}
+
+
+

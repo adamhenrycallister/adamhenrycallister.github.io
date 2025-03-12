@@ -12,6 +12,9 @@ const routes = [
   { title: "Compound Interest", path: "/time_discounting/compound_interest", component: "TD2", group: "TD"  },
   { title: "Annuities", path: "/time_discounting/annuities", component: "TD3", group: "TD"  },
   { title: "Bonds", path: "/time_discounting/bonds", component: "TD4", group: "TD"  },
+  { title: "Contents", path: "/risk", component: "Risk0", group: "Risk"  },
+  { title: "Intro", path: "/risk/intro", component: "Risk1", group: "Risk"  },
+  { title: "Risk Aversion", path: "/risk/risk_aversion", component: "Risk2", group: "Risk"  },
 ];
 
 export default routes;

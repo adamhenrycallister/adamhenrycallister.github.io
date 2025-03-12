@@ -15,6 +15,7 @@ function Navbar() {
                     <NavLink className="dropbtn">Teaching</NavLink>
                     <ul className="dropdown-content">
                         <li><NavLink to="/time_discounting">Time Discounting</NavLink></li>
+                        <li><NavLink to="/risk">Risk</NavLink></li>
                         <li><NavLink to="/black_scholes">Black-Scholes</NavLink></li>
                     </ul>
                 </li>
