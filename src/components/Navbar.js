@@ -17,6 +17,7 @@ function Navbar() {
                         <li><NavLink to="/time_discounting">Time Discounting</NavLink></li>
                         <li><NavLink to="/risk">Risk</NavLink></li>
                         <li><NavLink to="/black_scholes">Black-Scholes</NavLink></li>
+                        <li><NavLink to="/fourier">Fourier Transform</NavLink></li>
                     </ul>
                 </li>
             </ul>

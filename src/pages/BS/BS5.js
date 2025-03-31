@@ -37,6 +37,7 @@ function BS5() {
 		          	u(x, \\tau) = \\frac{1}{\\sqrt{4\\pi \\alpha \\tau}}\\int^{\\infty}_{-\\infty} u(z, 0)e^{-\\frac{(z-x)^2}{4 \\alpha \\tau}}dz \\quad \\quad \\text{(1)}
 		        \\]`}
 		    </MathJax>
+		    For now, we'll skip the specifics on how we came up with this solution to the heat equation, but you can go over the derivation in the lesson about <NavLink className='inline-link' to="/fourier/heat_equation">Fourier transforms</NavLink>.
 		     Note that this solution depends on an initial condition, <MathJax inline>{"\\( u(z,0) \\)"}</MathJax>. In our setting, different initial conditions correspond to different types of derivative securities. Thus, before 
     		we continue, we need to pick a type of derivative to price. One of the simplest choices is the European call option, 
     		which gives the holder the right (but not the obligation) to purchase a specified number of shares of the underlying 

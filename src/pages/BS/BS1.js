@@ -1,6 +1,7 @@
 import React from 'react';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import './BlackScholes.css';
+import { NavLink } from 'react-router-dom';
 import PageNavigator from "../../components/PageNavigator";
 
 
@@ -92,7 +93,7 @@ function BS1() {
               \\frac{\\partial u}{\\partial t} = \\alpha \\frac{\\partial^2 u}{\\partial x^2}
             \\]`}
         </MathJax>
-        People have spent a lot of time thinking about solutions to the heat equation. For our purposes, we will simply apply a well-known solution of the heat equation to our specific setting rather than derive the solution ourselves.
+        People have spent a lot of time thinking about solutions to the heat equation. For our purposes, we will simply apply a well-known solution of the heat equation to our specific setting rather than derive the solution ourselves. For a look at the specifics of the derivation, see the lesson on <NavLink className='inline-link' to="/fourier/heat_equation">Fourier transforms</NavLink>.
       </p>
     </div>
     <div id='normal_dist'>

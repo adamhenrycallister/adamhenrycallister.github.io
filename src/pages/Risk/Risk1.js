@@ -105,7 +105,7 @@ function Risk1() {
             If we get rid of all curvature and consider linear utility, we say that the person is risk neutral. 
             </p>
             <p>
-            So, far we've explored how the concept of utility can help us distinguish between gambles with the same expected value but different outcome distributions. We've also seen how risk averse behavior can be modeled by a concave utility function, and risk seeking behavior can be modeled by a convex utility function. 
+            So far, we've explored how the concept of utility can help us distinguish between gambles with the same expected value but different outcome distributions. We've also seen how risk averse behavior can be modeled by a concave utility function, and risk seeking behavior can be modeled by a convex utility function. 
             In the next section, we'll formalize this relationship between the curvature of the utility function and risk aversion. 
             </p>
           <p className='heading2'>Examples</p>

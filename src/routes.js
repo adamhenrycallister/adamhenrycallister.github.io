@@ -15,6 +15,11 @@ const routes = [
   { title: "Contents", path: "/risk", component: "Risk0", group: "Risk"  },
   { title: "Intro", path: "/risk/intro", component: "Risk1", group: "Risk"  },
   { title: "Risk Aversion", path: "/risk/risk_aversion", component: "Risk2", group: "Risk"  },
+  { title: "Contents", path: "/fourier", component: "Fourier0", group: "Fourier"  },
+  { title: "Complex Numbers", path: "/fourier/complex_numbers", component: "Fourier1", group: "Fourier"  },
+  { title: "Fourier Series", path: "/fourier/series", component: "Fourier2", group: "Fourier"  },
+  { title: "Fourier Transform", path: "/fourier/transform", component: "Fourier3", group: "Fourier"  },
+  { title: "Heat Equation", path: "/fourier/heat_equation", component: "Fourier4", group: "Fourier"  },
 ];
 
 export default routes;
