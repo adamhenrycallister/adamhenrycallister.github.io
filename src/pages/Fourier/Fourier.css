@@ -126,3 +126,39 @@
   border-color: black;
 }
 
+.table-row {
+  text-align: center; 
+}
+
+.table-entry {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-group-header {
+  background-color: #b9c4ce;
+  font-weight: bold;
+/*  border: 2px solid #ffffff;*/
+}
+
+.table-column-label {
+  background-color: #ced9e3;
+/*  border: 2px solid #ffffff;*/
+  font-weight: bold;
+}
+
+.table-entry-head {
+  border: 2px solid #ffffff;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.my-table {
+  margin: 0 auto;
+  border-collapse: collapse; /* optional styling */
+  min-width: 600px; /* optional: can force scroll when needed */
+}

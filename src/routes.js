@@ -20,6 +20,7 @@ const routes = [
   { title: "Fourier Series", path: "/fourier/series", component: "Fourier2", group: "Fourier"  },
   { title: "Fourier Transform", path: "/fourier/transform", component: "Fourier3", group: "Fourier"  },
   { title: "Heat Equation", path: "/fourier/heat_equation", component: "Fourier4", group: "Fourier"  },
+  { title: "Discrete Fourier Transform", path: "/fourier/discrete", component: "Fourier5", group: "Fourier"  },
 ];
 
 export default routes;

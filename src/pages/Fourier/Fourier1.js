@@ -131,7 +131,7 @@ function Fourier1() {
         In this way, we can think of an imaginary exponent in terms of trignometric functions. If we let <MathJax inline>{"\\( \\theta = \\pi \\)"}</MathJax>, we get Euler's Identity
         <MathJax className='math-container'>
           {`\\[
-            e^{\\pi i} = 1
+            e^{\\pi i} = -1
           \\]`}
         </MathJax>  
         </p>
