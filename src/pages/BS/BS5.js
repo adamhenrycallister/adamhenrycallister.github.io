@@ -3,6 +3,7 @@ import { MathJax, MathJaxContext } from "better-react-mathjax";
 import './BlackScholes.css';
 import { NavLink } from 'react-router-dom';
 import PageNavigator from "../../components/PageNavigator";
+import ExampleBox from "../../components/ExampleBox";
 
 function BS5() {
   return (
@@ -225,7 +226,7 @@ function BS5() {
 			    Finally, we'll substitute back in <MathJax inline>{"\\( x = \\log{S_t} \\)"}</MathJax> and <MathJax inline>{"\\( \\tau = T- t \\)"}</MathJax> to get
 			    <MathJax className='math-container'>
 			        {`\\[
-			          	V(S_t, t) = S_t  \\Phi\\left(\\frac{\\log{\\left(S_t/K\\right)} + \\left(r + \\frac{\\sigma^2}{2}\\right)(T-t))}{\\sigma \\sqrt{T-t}}\\right)
+			          	V(S_t, t) = S_t  \\Phi\\left(\\frac{\\log{\\left(S_t/K\\right)} + \\left(r + \\frac{\\sigma^2}{2}\\right)(T-t)}{\\sigma \\sqrt{T-t}}\\right)
 			          	 -Ke^{-r(T-t)}  \\Phi\\left(\\frac{\\log{\\left(S_t/K\\right)} + \\left(r - \\frac{\\sigma^2}{2}\\right)(T-t)}{\\sigma \\sqrt{T-t}}\\right)
 			        \\]`}
 			    </MathJax>
@@ -253,6 +254,70 @@ function BS5() {
 			    </MathJax>
 			   	</p>
     		</div>
+    		<p className='heading2'>Example</p>
+    		<ExampleBox solution={
+            <>
+              <p>
+    			The process of finding a formula for a European put option is very similar to the process of finding a European call option. Instead of the initial condition <MathJax inline>{"\\( V(S,T) = \\max\\{0, S-K\\} \\)"}</MathJax>, 
+    			we have the initial condition <MathJax inline>{"\\( V(S,T) = \\max\\{0, K- S\\} \\)"}</MathJax>. Because <MathJax inline>{"\\( K - S = K- e^z > 0 \\Leftrightarrow z < \\log K\\)"}</MathJax>, this change in initial conditions simply means 
+    			we'll put <MathJax inline>{"\\( \\log K \\)"}</MathJax> in the upper bound of our integral instead of the lower bound, and we'll leave in <MathJax inline>{"\\( K- e^z \\)"}</MathJax> instead of <MathJax inline>{"\\( e^z-K \\)"}</MathJax>.
+			    <MathJax className='math-container'>
+			        {`\\[
+			          	u(x, \\tau) = \\frac{1}{\\sqrt{2\\pi \\sigma^2 \\tau}}\\left( K \\int_{-\\infty}^{\\log{K}} 
+			          	e^{-\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)z -\\frac{(z-x)^2}{2 \\sigma^2 \\tau}}dz
+			          	- \\int_{-\\infty}^{\\log{K}} 
+			          	e^{\\left(\\frac{1}{2} + \\frac{r}{\\sigma^2}\\right)z -\\frac{(z-x)^2}{2 \\sigma^2 \\tau}}dz \\right)
+			        \\]`}
+			    </MathJax>
+			    Then, we follow the same steps in the derivation of the European call option formula until we get to the point where 
+			    <MathJax className='math-container'>
+		        {`\\[
+		          \\begin{aligned}
+		              u(x,\\tau) = 
+		              Ke^{- x\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right) + \\frac{\\sigma^2\\tau}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2} 
+		          	\\int_{-\\infty}^{\\frac{\\log{K} - x - \\left(r - \\frac{\\sigma^2}{2}\\right)\\tau}{\\sigma \\sqrt{\\tau}}} \\frac{e^{\\frac{-b^2}{2}}}{\\sqrt{2\\pi}}db 
+		          	- e^{x\\left(\\frac{1}{2} + \\frac{r}{\\sigma^2}\\right) + \\frac{\\sigma^2\\tau}{2}\\left(\\frac{1}{2} + \\frac{r}{\\sigma^2}\\right)^2} 
+		              \\int^{\\frac{\\log{K} - x - \\left(\\frac{\\sigma^2}{2} +r\\right)\\tau}{\\sigma \\sqrt{\\tau}}}_{-\\infty} \\frac{e^{\\frac{-a^2}{2}}}{\\sqrt{2\\pi}}da 
+		    	  \\end{aligned}
+		        \\]`}
+		    </MathJax>
+		    Now, when we write the integrals in terms of the standard normal cdf, we get 
+			<MathJax className='math-container'>
+		        {`\\[
+		          \\begin{aligned}
+		              u(x,\\tau) = 
+		              Ke^{- x\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right) + \\frac{\\sigma^2\\tau}{2}\\left(\\frac{1}{2} - \\frac{r}{\\sigma^2}\\right)^2} 
+		          	\\Phi\\left(\\frac{\\log{K} - x - \\left(r - \\frac{\\sigma^2}{2}\\right)\\tau}{\\sigma \\sqrt{\\tau}}\\right)
+		              -e^{x\\left(\\frac{1}{2} + \\frac{r}{\\sigma^2}\\right) + \\frac{\\sigma^2\\tau}{2}\\left(\\frac{1}{2} + \\frac{r}{\\sigma^2}\\right)^2} 
+		              \\Phi \\left(\\frac{\\log{K} - x - \\left(\\frac{\\sigma^2}{2} +r\\right)\\tau}{\\sigma \\sqrt{\\tau}}\\right) 
+		    	  \\end{aligned}
+		        \\]`}
+		    </MathJax>  
+		    Converting things back, we get 
+			<MathJax className='math-container'>
+		        {`\\[
+		          \\begin{aligned}
+		              V(S_t, t) = 
+		              Ke^{-r(T-t)} \\Phi\\left(\\frac{\\log(K/S_t) - \\left(r - \\frac{\\sigma^2}{2}\\right)(T-t)}{\\sigma \\sqrt{T-t}}\\right)
+		              -S_t \\Phi \\left(\\frac{\\log(K/S_t)  - \\left(\\frac{\\sigma^2}{2} +r\\right)(T-t)}{\\sigma \\sqrt{T-t}}\\right) 
+		    	  \\end{aligned}
+		        \\]`}
+		    </MathJax> 
+		    Using the same definition of <MathJax inline>{"\\( p \\)"}</MathJax> from the call formula derivation, we can rewrite the formula for a put option as 
+			<MathJax className='math-container'>
+		        {`\\[
+		          \\begin{aligned}
+		              V(S_t, t) = 
+		              Ke^{-r(T-t)} \\Phi\\left(\\sigma\\sqrt{T-t} -p\\right)
+		              -S_t \\Phi \\left(- p\\right) 
+		    	  \\end{aligned}
+		        \\]`}
+		    </MathJax> 
+              </p>
+            </>
+          }>
+            <p><strong>Example 1:</strong> Use the Black-Scholes equation to find a formula for the price of a European put option.</p>
+          </ExampleBox>
     		</MathJaxContext>
     	<PageNavigator group="BS"/>
     	<div style={{ display: "flex", justifyContent: "center", alignItems: "center"}}><NavLink className='BS-link' to="/black_scholes">Contents</NavLink></div>

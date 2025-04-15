@@ -2,6 +2,7 @@ import React from 'react';
 import './BlackScholes.css';
 import { NavLink } from 'react-router-dom';
 import PageNavigator from "../../components/PageNavigator";
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 
 function BS0() {
   return (
@@ -12,6 +13,7 @@ function BS0() {
     		Here, we'll go through the process of deriving the Black-Scholes equation, use it to price a European call option, and talk about how different factors influence derivative pricing. 
     		A working knowledge of first-year calculus is assumed. We'll introduce more advanced topics as needed for the derivation. 
     		To follow along, make sure you are comfortable with the concepts in the "Preliminaries" section. </p>
+            <MathJaxContext>
     		<div style={{ display: "flex", paddingLeft: "10vw"}}>
     		<ul className='toc-list'>
     			<div className='content-group'>
@@ -54,6 +56,7 @@ function BS0() {
 	                	<li className='BS-content'>Initial Condition</li>
 	                	<li className='BS-content'>Transformed Solution</li>
 	                	<li className='BS-content'>Pricing Equation</li>
+                        <li className='BS-content'>Example</li>
 	                </ul>
                 </div>
                 <div className='content-group'>
@@ -65,13 +68,25 @@ function BS0() {
 	                	<li className='BS-content'>Risk-free Rate</li>
 	                	<li className='BS-content'>Volatility</li>
 	                	<li className='BS-content'>Time to Expiration</li>
+                        <li className='BS-content'>Summary</li>
 	                </ul>
                 </div>
                 <div className='content-group'>
                     <li><NavLink className='BS-link' to="/black_scholes/calculator_graph">Calculator/Graph</NavLink></li>
                 </div>
+                <div className='content-group'>
+                    <li><NavLink className='BS-link' to="/black_scholes/volatility">Volatility</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='BS-content'>Realized Volatility</li>
+                        <li className='BS-content'>Implied Volatility</li>
+                        <li className='BS-content'>Expected Volatility</li>
+                        <li className='BS-content'>Implied Volatility <MathJax inline>{"\\( \\neq \\)"}</MathJax> Expected Volatility</li>
+                        <li className='BS-content'>Imperfect Hedging Graph</li>
+                    </ul>
+                </div>
             </ul>
             </div>
+            </MathJaxContext>
     	<PageNavigator group="BS"/>
         </div>
   );

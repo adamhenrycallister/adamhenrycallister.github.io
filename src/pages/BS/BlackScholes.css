@@ -75,10 +75,60 @@
   gap: 5px;
 }
 
+.graph-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+}
+
 @media (max-width: 870px) { /* Adjust breakpoint as needed */
   .graph-container {
     flex-direction: column; /* Change to column on small screens */
     align-items: center; /* Center children when stacked */
   }
 }
+
+@media (max-width: 1050px) { /* Adjust breakpoint as needed */
+  .graph-container1 {
+    flex-direction: column; /* Change to column on small screens */
+    align-items: center; /* Center children when stacked */
+  }
+}
+
+.table-row {
+  text-align: center; 
+}
+
+.table-entry {
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.table-group-header {
+  background-color: #b9c4ce;
+  font-weight: bold;
+/*  border: 2px solid #ffffff;*/
+}
+
+
+.table-entry-head {
+  border: 2px solid #ffffff;
+  background-color: #ced9e3;
+/*  border: 2px solid #ffffff;*/
+  font-weight: bold;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.my-table {
+  margin: 0 auto;
+  border-collapse: collapse; /* optional styling */
+  min-width: 600px; /* optional: can force scroll when needed */
+}
+
 

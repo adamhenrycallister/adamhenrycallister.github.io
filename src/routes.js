@@ -7,6 +7,7 @@ const routes = [
   { title: "Pricing a Call", path: "/black_scholes/pricing", component: "BS5", group: "BS"  },
   { title: "Comparative Statics", path: "/black_scholes/statics", component: "BS6", group: "BS"  },
   { title: "Calculator/Graph", path: "/black_scholes/calculator_graph", component: "BS7", group: "BS"  },
+  { title: "Volatility", path: "/black_scholes/volatility", component: "BS8", group: "BS"  },
   { title: "Contents", path: "/time_discounting", component: "TD0", group: "TD"  },
   { title: "Intro", path: "/time_discounting/intro", component: "TD1", group: "TD"  },
   { title: "Compound Interest", path: "/time_discounting/compound_interest", component: "TD2", group: "TD"  },

@@ -25,7 +25,7 @@ function BS3() {
 		          \\end{aligned}
 		        \\]`}
 		      </MathJax>
-		      If this way of defining the stock and bond prices looks intimidating, remember that GBM means the stock price is determined according to <MathJax inline>{"\\(S_t = S_0 e^{\\left(\\mu - \\frac{\\sigma^2}{2}\\right)t + \\bar \\sigma W_t}\\)"}</MathJax>, and 
+		      If this way of defining the stock and bond prices looks intimidating, remember that GBM means the stock price is determined according to <MathJax inline>{"\\(S_t = S_0 e^{\\left(\\mu - \\frac{\\sigma^2}{2}\\right)t + \\sigma W_t}\\)"}</MathJax>, and 
 		      the bond equation can be solved as <MathJax inline>{"\\( B_t = B_0e^{rt}\\)"}</MathJax>.
 	      	</p>
       	</div>
