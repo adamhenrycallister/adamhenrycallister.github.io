@@ -78,7 +78,7 @@ function Fourier1() {
         We know how to find <MathJax inline>{"\\( x^a \\)"}</MathJax> and <MathJax inline>{"\\( b\\log(x) \\)"}</MathJax>. Thus, to solve the problem of complex exponents, we really need only find an expression for <MathJax inline>{"\\( e^{\\theta i} \\)"}</MathJax>, where <MathJax inline>{"\\( \\theta \\)"}</MathJax> is some real number. 
         </p>
         <p>First let's consider the Taylor expansions of <MathJax inline>{"\\( e^x \\)"}</MathJax>, <MathJax inline>{"\\( \\sin(x) \\)"}</MathJax>, and <MathJax inline>{"\\( \\cos (x) \\)"}</MathJax>, all centered at zero. 
-        Recall that, for a function, <MathJax inline>{"\\( f(x) \\)"}</MathJax>, that is infinitely differentiable at some value <MathJax inline>{"\\( c  \\)"}</MathJax>, 
+        For a function, <MathJax inline>{"\\( f(x) \\)"}</MathJax>, that is infinitely differentiable at some value <MathJax inline>{"\\( c  \\)"}</MathJax>, 
         the Taylor Expansion of <MathJax inline>{"\\( f(x) \\)"}</MathJax> centered at <MathJax inline>{"\\( c \\)"}</MathJax> is given by 
         <MathJax className='math-container'>
           {`\\[

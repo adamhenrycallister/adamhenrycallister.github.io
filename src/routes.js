@@ -22,6 +22,7 @@ const routes = [
   { title: "Fourier Transform", path: "/fourier/transform", component: "Fourier3", group: "Fourier"  },
   { title: "Heat Equation", path: "/fourier/heat_equation", component: "Fourier4", group: "Fourier"  },
   { title: "Discrete Fourier Transform", path: "/fourier/discrete", component: "Fourier5", group: "Fourier"  },
+  { title: "Delaware Incorporation", path: "/corp", component: "Corp1", group: "Corp"  },
 ];
 
 export default routes;

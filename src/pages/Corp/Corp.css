@@ -1,0 +1,232 @@
+.Corp {
+  overflow-wrap: break-word;
+/*  overflow-y: scroll;*/
+  display: flex;
+  flex-direction: column;
+/*  padding-top: 5.5em;*/
+  padding-left: 5vw;
+  padding-right: 5vw;
+/*  background-color: red;*/
+}
+
+.toc-list {
+  list-style: none;
+}
+
+.heading1 {
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.heading2 {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: left;
+}
+
+.Corp-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.Corp-content {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 2px;
+}
+
+.content-group {
+  padding: 10px;
+}
+
+.input-bars {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.Corp-link:hover {
+  color: var(--accent-color);
+}
+
+.text {
+	overflow-wrap: break-word;
+	padding-left: 1em;
+}
+
+.math-container {
+  overflow-y: hidden;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents equation from breaking into multiple lines */
+  max-width: 100%; /* Ensures it fits within the parent container */
+/*  margin-bottom: 5px;*/
+}
+
+.graph-container {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  gap: 5px;
+}
+
+.graph-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+}
+
+@media (max-width: 870px) { /* Adjust breakpoint as needed */
+  .graph-container {
+    flex-direction: column; /* Change to column on small screens */
+    align-items: center; /* Center children when stacked */
+  }
+}
+
+@media (max-width: 1050px) { /* Adjust breakpoint as needed */
+  .graph-container1 {
+    flex-direction: column; /* Change to column on small screens */
+    align-items: center; /* Center children when stacked */
+  }
+}
+
+.table-row {
+  text-align: center; 
+}
+
+.table-entry {
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px;
+}
+
+.table-group-header {
+  background-color: #b9c4ce;
+  font-weight: bold;
+/*  border: 2px solid #ffffff;*/
+}
+
+
+.table-entry-head {
+  border: 2px solid #ffffff;
+  background-color: #ced9e3;
+/*  border: 2px solid #ffffff;*/
+  font-weight: bold;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.my-table {
+  margin: 0 auto;
+  border-collapse: collapse; /* optional styling */
+  min-width: 600px; /* optional: can force scroll when needed */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10%;
+  padding-bottom: 15px;
+}
+
+.label1 {
+  font-weight: bold;
+  color: black;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.tooltip-line {
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+.graph-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding: 1rem 0; /* optional */
+  text-align: center; /* center inline-block content */
+  white-space: nowrap;
+}
+
+.graph-container svg {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: sans-serif;
+  padding-left: 10%;
+}
+
+.label {
+  color: gray;
+  font-size: 14px;
+}
+
+.label.active {
+  font-weight: bold;
+  color: black;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+
