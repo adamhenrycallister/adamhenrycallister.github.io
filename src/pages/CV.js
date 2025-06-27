@@ -6,7 +6,7 @@ function CV() {
     <div className="cv-container">
       <div className="cv-embed">
         <iframe
-          src="https://docs.google.com/document/d/11lMoIrDzSa9Y4ClB-695SmJS_WXZh2lo/preview"
+          src="https://drive.google.com/file/d/1jkxm7kJstUlWbaieu3q3UAIRMv88GV3P/preview"
           width="100%"
           height="600"
           allow="autoplay"
@@ -14,7 +14,7 @@ function CV() {
       </div>
       <a
         className="cv-download"
-        href="https://docs.google.com/document/d/11lMoIrDzSa9Y4ClB-695SmJS_WXZh2lo/export?format=pdf"
+        href="https://drive.google.com/uc?export=download&id=1jkxm7kJstUlWbaieu3q3UAIRMv88GV3P"
         target="_blank"
         rel="noopener noreferrer"
       >

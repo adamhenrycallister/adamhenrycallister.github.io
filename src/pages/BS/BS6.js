@@ -228,7 +228,7 @@ function BS6() {
 			   	</p>
 			   	<p>
 			   	The signs of <MathJax inline>{"\\( \\frac{\\partial G}{\\partial r} \\)"}</MathJax> and <MathJax inline>{"\\( \\frac{\\partial G}{\\partial \\sigma} \\)"}</MathJax> both depend on other parameters. However, if the <MathJax inline>{"\\( g_1 \\)"}</MathJax> term dominates, 
-			   	then we should generally expect higher volatility and lower risk-free rate make it more likely that increasing time to expiration will increase put price. 
+			   	then we should generally expect higher volatility and lower risk-free rate to make it more likely that increasing time to expiration will increase put price. 
 			   	</p>
 			   	<p>
 			   	Finally, since <MathJax inline>{"\\( \\frac{\\partial }{\\partial (T-t)}\\left(\\sigma \\sqrt{T-t} - p\\right) = \\frac{\\sigma^2 - 2r}{4\\sigma\\sqrt{T-t}} \\)"}</MathJax> and <MathJax inline>{"\\( \\frac{\\partial g_1}{\\partial (T-t)} = \\frac{-\\sigma}{4r(T-t)^{3/2}}\\)"}</MathJax>, we can be sure that <MathJax inline>{"\\( \\frac{\\partial G}{\\partial (T-t)} \\leq 0 \\)"}</MathJax> if <MathJax inline>{"\\( \\sigma^2 \\geq 2r\\)"}</MathJax>. 
