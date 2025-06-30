@@ -25,7 +25,13 @@ function Corp1() {
           it is not possible to see any meaningful variation in the other states.</p>
           <div>
             <CorpMap data={data} dataField={dataField} year={year}/>
-            <div className='input-container'>
+            <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          flexDirection: 'row',
+                          gap: '10%',
+                          paddingBottom: '15px',
+                        }}>
                 <ToggleSwitch onToggle={setDataField} />
                 <YearSelector year={year} setYear={setYear} />
             </div>

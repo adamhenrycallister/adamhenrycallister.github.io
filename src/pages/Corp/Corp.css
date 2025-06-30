@@ -131,13 +131,7 @@
   min-width: 600px; /* optional: can force scroll when needed */
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 10%;
-  padding-bottom: 15px;
-}
+
 
 .label1 {
   font-weight: bold;
