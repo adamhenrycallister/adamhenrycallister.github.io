@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import {BrowserView, MobileView} from "react-device-detect";
+import ContactIcons from "../components/ContactIcons";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
                 incentives for investors, managers, and regulators. I use tools from law, economics, and data science 
                 to assess whether these systems function as intended and produce normatively desirable outcomes.
               </p>
+            <div className='intro'><ContactIcons /></div>
             </div>
           </div>
         </div>
@@ -32,6 +34,7 @@ function Home() {
             incentives for investors, managers, and regulators. I use tools from law, economics, and data science 
             to assess whether these systems function as intended and produce normatively desirable outcomes.
           </p>
+        <div className='introMobile'><ContactIcons /></div>
         </div>
       </MobileView>
     </main>

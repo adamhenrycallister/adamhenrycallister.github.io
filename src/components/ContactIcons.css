@@ -1,0 +1,26 @@
+/* ContactIcons.css */
+.contact-icons {
+  display: flex;
+  gap: 1rem; /* spacing between icons */
+  align-items: center;
+  justify-content: flex-start; /* or center if you prefer */
+}
+
+.contact-icons a {
+  color: var(--primary-color); /* This now affects the SVG */
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.contact-icons a img,
+.contact-icons a svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  vertical-align: middle;
+}
+
+.contact-icons a:hover {
+  opacity: 0.75;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
