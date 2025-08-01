@@ -6,20 +6,21 @@ function Research() {
     	<div className='Research'>
     		<p className='heading1'>Dissertation</p>
 
-    		<p className='article'>Pricing in Securities Fraud (Job Talk Paper)</p>
+    		<p className='article'><a className='link' href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5375703' target="_blank">Pricing in Securities Fraud</a> (Job Talk Paper)</p>
     		<p className='abstract'>
-          Calculating damages in securities fraud class actions typically involves comparing the price investors actually
-          paid for their shares with the hypothetical price they would have paid had the fraud not occurred. Experts
-          estimate this counterfactual using the abnormal stock price drop following the revelation of the fraud. I
-          leverage variation in legal standards across federal circuits to show that this price drop reflects not only the
-          market’s reassessment of the firm’s intrinsic value, but also investors’ expectations about the costs of future
-          securities fraud litigation. As a result, the standard method overstates damages by conflating misinformation
-          losses with litigation risk. I develop a model to show how courts could adjust damages awards to isolate
-          the portion of the price drop attributable to the fraud itself. Such an adjustment could reduce damages in
-          the average case by about 7.5% but must account for feedback effects, or the way a change in the damage
-          calculation alters investors’ expectations about the costs of future securities suits. I also examine the role of
-          directors and officers (D&O) insurance in absorbing litigation costs and argue that the price effect created by
-          the presence of securities liability may enhance deterrence goals.
+          Calculating damages in securities fraud class actions typically involves comparing the price investors
+          actually paid for their shares with the hypothetical price they would have paid had the fraud not occurred.
+          Experts estimate this counterfactual using the abnormal stock price drop following the revelation of fraud.
+          I leverage variation in legal standards across federal circuits to show that this price drop reflects not only
+          the market’s reassessment of the firm’s intrinsic value but also investors’ expectations about the cost
+          of future securities fraud litigation. As a result, the standard method overstates damages by conflating
+          misinformation losses with litigation risk. I develop a model to explore how courts might adjust damage
+          awards to account for the portion of the price drop attributable to the expected cost of a future securities
+          fraud settlement. Such an adjustment could reduce damages in the average case by about 8.9% but must
+          account for feedback effects, or the way a change in the damage calculation alters investors’ expectations
+          about the costs of future securities suits. I also examine how D&O insurance affects this dynamic and
+          argue that the use of unadjusted price drops as a damage measure may increase the risk of litigation
+          outcomes that reflect investor sentiment rather than actual managerial misconduct.
         </p>
     		<p className='article'><a className='link' href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5309471' target="_blank">Expert Asymmetry: Evidence from Securities Litigation</a> (with {' '}
           <a className='link' href="https://sites.google.com/view/andrewgranato/" target="_blank" rel="noopener noreferrer">

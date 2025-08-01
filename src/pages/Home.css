@@ -17,6 +17,15 @@
   align-items: center;
 }
 
+.paper-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.paper-link:hover {
+  color: var(--accent-color);
+/*  color: #585858;*/
+}
 .container {
 /*  height: 600px;
   width: 900px;*/
@@ -55,7 +64,7 @@
   align-items: top;
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 550px;
 /*  background-color: red;*/
 /*  display: grid;*/
  }
@@ -64,7 +73,7 @@
   font-weight: bold;
   font-size: 4.5em;
   color: var(--primary-color);
-  margin-top: 40px;
+  margin-top: 30px;
 /*  font-family: 'Passion One', sans-serif;*/
   margin-bottom: 0em;
   padding-bottom: 0em;
@@ -89,6 +98,14 @@
   padding-right: 4.5em;
   margin-top: 0em;
   padding-top: 1em;
+ }
+
+.intro1 {
+  font-size: 1.15em;
+  padding-left: 1em;
+  padding-right: 4.5em;
+  margin-top: 0em;
+  padding-top: 0em;
  }
 
  .introMobile {
