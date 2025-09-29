@@ -30,7 +30,7 @@ function Research() {
             Belisa Pang
         </a>)</p>
     		<p className='journal'>
-          <i>Journal of Empirical Legal Studies</i> (Revise and Resubmit)
+          <i>Journal of Empirical Legal Studies</i> (Forthcoming)
  			  </p>
     		<p className='abstract'>
           Modern litigation often involves two separate, extra-legal features: (1) contingency fee arrangements
