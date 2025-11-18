@@ -5,6 +5,10 @@ import Home from './pages/Home';
 import CV from './pages/CV';
 import Research from './pages/Research';
 import Teaching from './pages/Teaching';
+import CorpFin from './pages/CorpFin/CorpFin';
+import MA from './pages/MA/MA';
+import Misc from './pages/Misc/Misc';
+import Sec from './pages/Sec/Sec';
 import './App.css';  
 import routes from "./routes";
 
@@ -19,11 +23,14 @@ function App() {
             <Route path="/cv" element={<CV />} />
             <Route path="/research" element={<Research />} />
             <Route path="/teaching" element={<Teaching />} />
-            {routes.map(({ path, component, group }) => {
-              const Component = require(`./pages/${group}/${component}`).default;
+            <Route path="/corporate_finance" element={<CorpFin />} />
+            <Route path="/ma" element={<MA />} />
+            <Route path="/misc" element={<Misc />} />
+            <Route path="/sec_reg" element={<Sec />} />
+            {routes.map(({ path, component, group, course }) => {
+              const Component = require(`./pages/${course}/${group}/${component}`).default;
               return <Route key={path} path={path} element={<Component />} />;
             })}
-            <Route path="*" element={<Navigate to="/black_scholes" />} /> 
           </Routes>
         </main>
       </div>
