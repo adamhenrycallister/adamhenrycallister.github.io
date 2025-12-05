@@ -36,6 +36,7 @@ function TD0() {
                         <li className='TD-content'>Perpetuity</li>
                         <li className='TD-content'>Fixed Payment Annuity</li>
                         <li className='TD-content'>Growth Annuity</li>
+                        <li className='TD-content'>Time Units</li>
                         <li className='TD-content'>Examples</li>
                     </ul>
                 </div>

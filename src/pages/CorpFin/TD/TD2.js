@@ -109,8 +109,8 @@ function TD2() {
           {`\\[
             \\begin{aligned}
             X_{2,t} &= X_{2, t-1}\\left(1 + \\frac{r}{2}\\right)^2 \\\\
-            &= \\left(X_{2, t-2}\\left(1 + \\frac{r}{2}\\right)^2\\right)\\left(1 + \\frac{r}{2}\\right)^{2*2} \\\\
-            &= \\left(X_{2, t-3}\\left(1 + \\frac{r}{2}\\right)^2\\right)\\left(1 + \\frac{r}{2}\\right)^{2*3} \\\\
+            &= \\left(X_{2, t-2}\\left(1 + \\frac{r}{2}\\right)^2\\right)\\left(1 + \\frac{r}{2}\\right)^{2*1} \\\\
+            &= \\left(X_{2, t-3}\\left(1 + \\frac{r}{2}\\right)^2\\right)\\left(1 + \\frac{r}{2}\\right)^{2*2} \\\\
             &\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\vdots \\\\
             &= \\left(X_0\\left(1 + \\frac{r}{2}\\right)^2\\right)\\left(1 + \\frac{r}{2}\\right)^{2(t-1)} \\\\
             &= X_0\\left(1 + \\frac{r}{2}\\right)^{2t}
@@ -132,8 +132,8 @@ function TD2() {
           {`\\[
             \\begin{aligned}
             X_{n,t} &= X_{n,t-1}\\left(1 + \\frac{r}{n}\\right)^n \\\\
-            &= \\left(X_{n, t-2}\\left(1 + \\frac{r}{n}\\right)^n\\right)\\left(1 + \\frac{r}{n}\\right)^{2n} \\\\
-            &= \\left(X_{n,t-3}\\left(1 + \\frac{r}{n}\\right)^n\\right)\\left(1 + \\frac{r}{n}\\right)^{3n} \\\\
+            &= \\left(X_{n, t-2}\\left(1 + \\frac{r}{n}\\right)^n\\right)\\left(1 + \\frac{r}{n}\\right)^{n} \\\\
+            &= \\left(X_{n,t-3}\\left(1 + \\frac{r}{n}\\right)^n\\right)\\left(1 + \\frac{r}{n}\\right)^{2n} \\\\
             &\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\;\\vdots \\\\
             &= \\left(X_0\\left(1 + \\frac{r}{n}\\right)^n\\right)\\left(1 + \\frac{r}{n}\\right)^{n(t-1)} \\\\
             &= X_0\\left(1 + \\frac{r}{n}\\right)^{nt}

@@ -17,7 +17,7 @@ function TD3() {
         discount rate <MathJax inline>{"\\( r \\)"}</MathJax>. We'll label the present time period relative to these future payments <MathJax inline>{"\\( t = 0\\)"}</MathJax> and consider future payments <MathJax inline>{"\\( C_1, C_2, \\dots, C_T \\)"}</MathJax> for <MathJax inline>{"\\( t \\in \\{1, 2, \\dots, T\\} \\)"}</MathJax>. 
         </p>
         <p>
-        We'll assume that our discount rate compounds every period. Recall from the previous section that we can find the initial value of an investment (<MathJax inline>{"\\( X_0\\)"}</MathJax>) with interest that compounds every period given the final value (<MathJax inline>{"\\( X_t \\)"}</MathJax>) and the interest rate (<MathJax inline>{"\\( r\\)"}</MathJax>).
+        We'll generally assume that our discount rate compounds every period. Recall from the previous section that we can find the initial value of an investment (<MathJax inline>{"\\( X_0\\)"}</MathJax>) with interest that compounds every period given the final value (<MathJax inline>{"\\( X_t \\)"}</MathJax>) and the interest rate (<MathJax inline>{"\\( r\\)"}</MathJax>).
         <MathJax className='math-container'>
           {`\\[
             X_0 = \\frac{X_t}{(1 + r)^t}
@@ -29,7 +29,12 @@ function TD3() {
             X_0 = \\frac{X_t}{(1 + rt)}
           \\]`}
         </MathJax>
-        We will almost always consider a compound discount rate instead of a simple discount rate because the compound rate makes the math easier. 
+        If interest compounded multiple times during each period, <MathJax inline>{"\\( X_0\\)"}</MathJax> would be given by
+        <MathJax className='math-container'>
+          {`\\[
+            X_0 = \\frac{X_t}{\\left(1 + \\frac{r}{n}\\right)^{nt}}
+          \\]`}
+        </MathJax>
         </p>
         <p className='heading2'>General Annuity Formula</p>
         <p>
@@ -74,6 +79,17 @@ function TD3() {
         </MathJax> 
         Note that we can apply the sum of an infinite series since <MathJax inline>{"\\( \\left|\\frac{1}{1+r}\\right| < 1 \\Leftrightarrow r > 0 \\)"}</MathJax>. This gives us that the present value of a perpetuity is simply the payment each period divided by the discount rate.
         </p>
+        <p>
+        Suppose that, instead of a discount rate that compounds once each period, we had a rate that compounds <MathJax inline>{"\\( n \\)"}</MathJax> times per period. In this case, the present value of the fixed payment stream would be given by 
+        <MathJax className='math-container'>
+          {`\\[
+            \\begin{aligned}
+            PV &= \\sum^{\\infty}_{t=1} \\frac{C}{\\left(1+\\frac{r}{n}\\right)^{nt}} \\\\\
+            &= \\frac{C}{\\left(1 + \\frac{r}{n}\\right)^{n} - 1}
+            \\end{aligned}
+          \\]`}
+        </MathJax> 
+        </p>
         <p className='heading2'>Fixed Payment Annuity</p>
         <p>
         Now we can use the formula for a perpetuity to find a formula for an annuity with the same payment each period. The only thing we're changing here is to use a finite ending period <MathJax inline>{"\\( T \\)"}</MathJax> instead of <MathJax inline>{"\\( T \\to \\infty \\)"}</MathJax>. 
@@ -87,6 +103,17 @@ function TD3() {
             &= \\sum^{\\infty}_{t=1} \\frac{C}{(1+r)^t}\\left[1 - \\left(\\frac{1}{1 + r}\\right)^T\\right] \\\\
             &= \\frac{C}{r}\\left(1 - \\left(\\frac{1}{1 + r}\\right)^T \\right) \\\\
             &= C\\left(\\frac{1 - (1+r)^{-T}}{r}\\right)
+            \\end{aligned}
+          \\]`}
+        </MathJax> 
+        </p>
+        <p>
+        If we had used a rate that compounds <MathJax inline>{"\\( n \\)"}</MathJax> times per period, the present value of the fixed payment annuity would be given by 
+        <MathJax className='math-container'>
+          {`\\[
+            \\begin{aligned}
+            PV &= \\sum^{T}_{t=1} \\frac{C}{\\left(1+\\frac{r}{n}\\right)^{nt}} \\\\
+            &= C\\left(\\frac{1 - \\left(1 + \\frac{r}{n}\\right)^{-nT}}{\\left(1 + \\frac{r}{n}\\right)^n - 1}\\right)
             \\end{aligned}
           \\]`}
         </MathJax> 
@@ -147,6 +174,58 @@ function TD3() {
         </MathJax> 
         Again, as long as the discount rate is greater than the growth rate, or <MathJax inline>{"\\( r > g \\)"}</MathJax>.
         </p>
+        <p className='heading2'>Time Units</p>
+        <p>
+          In the annuity setting, we have four relevant time considerations: (1) the amount of time in between each payment (the cash-flow period), (2) the discount rate period, (3) the total duration of the annuity, 
+          and (4) the amount of time in between each compounding (the compounding period). To use the standard annuity formulas, we want everything to be measured in the same time units. 
+        </p>
+        <p>
+        Before we try to convert everything to the same units, let's consider again the equation for the future value of a single payment with interest that compounds <MathJax inline>{"\\( n \\)"}</MathJax> times per period. (We also assume the discount rate and the total duration are measured in the same time units.) 
+        <MathJax className='math-container'>
+          {`\\[
+            \\begin{aligned}
+            FV = PV\\left(1 + \\frac{r}{n}\\right)^{nt}
+            \\end{aligned}
+          \\]`}
+        </MathJax> 
+        The goal will be to adjust the discount rate in such a way that enables us to ignore the fact that we are compounding multiple times per period. Put differently, we want to find a new discount rate, <MathJax inline>{"\\( r_e \\)"}</MathJax>, such that 
+        <MathJax className='math-container'>
+          {`\\[
+            \\begin{aligned}
+            \\left(1 + \\frac{r}{n}\\right)^{nt} = \\left(1 + r_e\\right)^t \\\\
+            \\Leftrightarrow r_e = \\left(1 + \\frac{r}{n}\\right)^{n}  - 1
+            \\end{aligned} 
+          \\]`}
+        </MathJax>  
+        Here, we call <MathJax inline>{"\\( r \\)"}</MathJax> the nominal rate and <MathJax inline>{"\\( r_e \\)"}</MathJax> the effective rate, or the rate that takes into account the effect of compounding. 
+        </p>
+        <p>
+        With the concept of an effective rate in mind, we can convert everything to the same time units if we know three things: (1) the number of times interest is compounded per rate period (<MathJax inline>{"\\( n \\)"}</MathJax>), 
+          (2) the number of times interest is compounded per cash-flow period (<MathJax inline>{"\\( k \\)"}</MathJax>), and (3) the number of payments per duration period (<MathJax inline>{"\\( l \\)"}</MathJax>).
+          Using these measures, we can adjust the discount rate and the time duration as follows:
+        <MathJax className='math-container'>
+          {`\\[
+            \\begin{aligned}
+              r_{new} &= \\left(1 + \\frac{r}{n}\\right)^{k} - 1 \\\\
+              T_{new} &= lT
+            \\end{aligned} 
+          \\]`}
+        </MathJax> 
+        Once we make these changes, we can use <MathJax inline>{"\\( r_{new} \\)"}</MathJax> and <MathJax inline>{"\\( T_{new} \\)"}</MathJax> in any of the following formulas:
+        <MathJax className='math-container'>
+          {`\\[
+            \\begin{aligned}
+              PV &= \\sum^T_{t=1} \\frac{C_t}{(1+r)^t} & (\\text{General Annuity}) \\\\ \\\\
+              PV &= \\frac{C}{r} & (\\text{Perpetuity}) \\\\ \\\\
+              PV &= C\\left(\\frac{1 - (1 + r)^{-T}}{r}\\right) & (\\text{Fixed-Payment Annuity}) \\\\ \\\\
+              PV &= \\frac{C}{r - g} & (\\text{Growth Perpetuity}) \\\\ \\\\
+              PV &= C\\left(\\frac{1 - \\left(\\frac{1 + g}{1 + r}\\right)^{T}}{r - g}\\right) & (\\text{Fixed-Payment Annuity with Growth})
+            \\end{aligned} 
+          \\]`}
+        </MathJax> 
+        </p>
+        <p>
+        </p>
           <p className='heading2'>Examples</p>
           <ExampleBox solution={
             <>
@@ -165,6 +244,31 @@ function TD3() {
             </>
           }>
             <p><strong>Example 1:</strong> What is the present value of an asset that pays out $100 every year for 20 years starting today? Assume a compound annual discount rate of 5%. </p>
+          </ExampleBox>
+          <ExampleBox solution={
+            <>
+              <p>
+              This is a perpetuity. Before we calculate the present value, we need to adjust the discount rate to account for the different time units. 
+              Compounding happens 4 times per year, which gives us <MathJax inline>{"\\( n = 4 \\)"}</MathJax>. There are 90 days in each quarter, which gives us <MathJax inline>{"\\( k =  \\frac{1}{90} \\)"}</MathJax>.
+              <MathJax className='math-container'>
+                {`\\[
+                  \\begin{aligned}
+                  r_{new} = \\left(1 + \\frac{0.04}{4}\\right)^{\\frac{1}{90}} - 1 \\approx 0.0001105653
+                  \\end{aligned}
+                \\]`}
+              </MathJax> 
+              Now, we can use this new rate in the formula for a perpetuity.
+              <MathJax className='math-container'>
+                {`\\[
+                  \\begin{aligned}
+                  PV = \\frac{10}{0.0001105653} \\approx \\$90,0444
+                  \\end{aligned}
+                \\]`}
+              </MathJax> 
+              </p>
+            </>
+          }>
+            <p><strong>Example 2:</strong> How much should you pay for the promise of $10 every day forever if you have a nominal annual discount rate of 4% compounded quarterly? (Assume a 360-day year.)</p>
           </ExampleBox>
           <ExampleBox solution={
             <>
@@ -192,7 +296,7 @@ function TD3() {
               </p>
             </>
           }>
-            <p><strong>Example 2:</strong> Consider an asset that has an initial payment of $20 one month from now. For each consecutive month, the payment grows at a rate of 2%. Using a compound monthly discount rate of 3%, 
+            <p><strong>Example 3:</strong> Consider an asset that has an initial payment of $20 one month from now. For each consecutive month, the payment grows at a rate of 2%. Using a compound monthly discount rate of 3%, 
             find the minimum number of months the asset must pay out so that its present value today is at least $500.</p>
           </ExampleBox>
           <ExampleBox solution={
@@ -261,7 +365,7 @@ function TD3() {
               </p>
             </>
           }>
-            <p><strong>Example 3:</strong> Consider an asset that pays out $100 every year for the next 10 years. Find the compound annual discount rate that will result in a present value of $900 for this asset.</p>
+            <p><strong>Example 4:</strong> Consider an asset that pays out $100 every year for the next 10 years. Find the compound annual discount rate that will result in a present value of $900 for this asset.</p>
           </ExampleBox>
     	</MathJaxContext>
     	<PageNavigator group="TD"/>

@@ -20,6 +20,13 @@ function Misc() {
                         <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/discrete">Discrete Fourier Transform</NavLink></li>
                     </ul>               
                 </div>
+                <div className='content-group'>
+                    <li><NavLink className='Misc-link' to="/mortgages">Mortgages</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/mortgages/points">Points</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/mortgages/points_calculator">Points Calculator</NavLink></li>
+                    </ul>               
+                </div>
             </ul>
             </div>
     	<PageNavigator group="Misc"/>
