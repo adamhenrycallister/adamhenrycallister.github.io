@@ -16,7 +16,9 @@ function CorpFin() {
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/time_discounting/intro">Introduction</NavLink></li>
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/time_discounting/compound_interest">Compound Interest</NavLink></li>
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/time_discounting/annuities">Annuities</NavLink></li>
+                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/time_discounting/investment_rules">Investment Decision Rules</NavLink></li>
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/time_discounting/bonds">Bonds</NavLink></li>
+                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/time_discounting/time_conversion">Time Conversion</NavLink></li>
                     </ul>  
                     <li><NavLink className='CorpFin-link' to="/corporate_finance/risk">Risk</NavLink></li>
                     <ul className='toc-list'>

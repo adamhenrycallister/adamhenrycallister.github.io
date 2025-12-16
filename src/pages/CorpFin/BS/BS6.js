@@ -3,7 +3,6 @@ import { MathJax, MathJaxContext } from "better-react-mathjax";
 import './BlackScholes.css';
 import { NavLink } from 'react-router-dom';
 import PageNavigator from "../../../components/PageNavigator";
-import ExampleBox from "../../../components/ExampleBox";
 
 function BS6() {
   return (

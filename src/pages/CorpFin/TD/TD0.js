@@ -41,12 +41,30 @@ function TD0() {
                     </ul>
                 </div>
                 <div className='content-group'>
+                    <li><NavLink className='TD-link' to="/corporate_finance/time_discounting/investment_rules">Investment Decision Rules</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='TD-content'>Preliminaries</li>
+                        <li className='TD-content'>Examples</li>
+                    </ul>
+                </div>
+                <div className='content-group'>
                     <li><NavLink className='TD-link' to="/corporate_finance/time_discounting/bonds">Bonds</NavLink></li>
                     <ul className='toc-list'>
                         <li className='TD-content'>Preliminaries</li>
                         <li className='TD-content'>No-Coupon Bonds</li>
                         <li className='TD-content'>Coupon Bonds</li>
                         <li className='TD-content'>Convertible Bonds</li>
+                        <li className='TD-content'>Bond Yield</li>
+                        <li className='TD-content'>Examples</li>
+                    </ul>
+                </div>
+                <div className='content-group'>
+                    <li><NavLink className='TD-link' to="/corporate_finance/time_discounting/time_conversion">Time Conversion</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='TD-content'>Nominal vs. Effective Rate</li>
+                        <li className='TD-content'>Changing Time Units</li>
+                        <li className='TD-content'>Process</li>
+                        <li className='TD-content'>Single Equation</li>
                         <li className='TD-content'>Examples</li>
                     </ul>
                 </div>
