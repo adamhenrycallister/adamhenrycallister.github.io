@@ -108,34 +108,109 @@ function Risk1() {
             So far, we've explored how the concept of utility can help us distinguish between gambles with the same expected value but different outcome distributions. We've also seen how risk averse behavior can be modeled by a concave utility function, and risk seeking behavior can be modeled by a convex utility function. 
             In the next section, we'll formalize this relationship between the curvature of the utility function and risk aversion. 
             </p>
-          <p className='heading2'>Examples</p>
-          <ExampleBox solution={
+            <p className='heading2'>Certainty Equivalent</p>
+            <p>
+            Given a utility function describing an individual's risk preferences, we can determine which gambles they prefer by comparing expected utilities. 
+            However, as mentioned before, the units of expected utility are not economically signficant by themselves. Another way to determine the value of a gamble is to calculate its certainty equivalent, or the amount of money that the individual would be willing to pay to take on the gamble. 
+            </p>
+            <p>
+            To do this, we want to find what certain payoff generates the same expected utility as the gamble. Suppose we are considering an individual whose risk preferences are represented by the utility function <MathJax inline>{"\\( u(x)=\\log (x + 200) \\)"}</MathJax>. The expected utility of the gambles introduced at the beginning is given by 
+            <MathJax className='math-container'>
+              {`\\[
+                \\begin{aligned}
+                EU_1 &= \\frac{1}{2}u(3) +  \\frac{1}{2}u(-1)   \\\\ 
+                &= \\frac{1}{2}\\left(\\log(203) +  \\log(199)\\right)  \\approx 5.303255 \\\\ \\\\
+                EU_2 &= \\frac{1}{2}u(102) +  \\frac{1}{2}u(-100)  \\\\
+                &= \\frac{1}{2}\\left(\\log(302) +  \\log(100) \\right) \\approx 5.157799
+                \\end{aligned}
+              \\]`}
+            </MathJax> 
+            Now, we can use the inverse of the utility function to find out what certain dollar amount will yield these expected utilities.
+            <MathJax className='math-container'>
+              {`\\[
+                \\begin{aligned}
+                u(CE_1) &= \\log (CE_1 + 200) = 5.303255 \\\\ 
+                \\Leftrightarrow CE_1 &= e^{5.303255} - 200 \\approx $0.99 \\\\ \\\\
+                u(CE_2) &= \\log(CE_2 + 200) = 5.157799 \\\\
+                \\Leftrightarrow CE_2 &= e^{5.157799} - 200 \\approx -$26.22
+                \\end{aligned}
+              \\]`}
+            </MathJax> 
+            Thus, a person whose risk preferences are captured by this utility function would be indifferent between receiving $0.99 and taking on gamble 1. This person would also be indifferent between losing $26.22 and 
+            being forced to take on gamble 2. 
+            </p>
+            <p>
+            In general, the certainty equivalent for a gamble with expected utility <MathJax inline>{"\\( EU \\)"}</MathJax> is given by 
+            <MathJax className='math-container'>
+              {`\\[
+                \\begin{aligned}
+                CE = u^{-1}(EU)
+                \\end{aligned}
+              \\]`}
+            </MathJax> 
+            where <MathJax inline>{"\\( u^{-1}(x)\\)"}</MathJax> is the inverse function of <MathJax inline>{"\\( u(x) \\)"}</MathJax>.
+            </p>
+            <p className='heading2'>Examples</p>
+            <ExampleBox solution={
             <>
               <p>
-              Linear utility takes the form <MathJax inline>{"\\( u(z) = az + b\\)"}</MathJax>. We'll use this form to show that <MathJax inline>{"\\( E[u(\\tilde x)] - E[u(\\tilde y)] >0 \\)"}</MathJax>.
-            <MathJax className='math-container'>
-              {`\\[
-                \\begin{aligned}
-                E[u(\\tilde x)] - E[u(\\tilde y)] &= E[a\\tilde x + b] - E[a\\tilde y + b] \\\\
-                &= a\\left(E[\\tilde x] - E[\\tilde y]\\right) > 0
-                \\end{aligned}
-              \\]`}
-            </MathJax> 
-            We can show the general result using the same logic. Suppose we have an arbitrary utility function <MathJax inline>{"\\( u(z)\\)"}</MathJax> and two independent random variables <MathJax inline>{"\\( \\tilde x \\)"}</MathJax> and <MathJax inline>{"\\( \\tilde y \\)"}</MathJax> with <MathJax inline>{"\\( E[u(\\tilde x)] >E[u(\\tilde y)] \\)"}</MathJax>. 
-            An affine transformation of <MathJax inline>{"\\( u \\)"}</MathJax> simply means we plug <MathJax inline>{"\\( u \\)"}</MathJax> into a function of the form <MathJax inline>{"\\( f(z) = az + b \\)"}</MathJax>. 
-            <MathJax className='math-container'>
-              {`\\[
-                \\begin{aligned}
-                E[f(u(\\tilde x))] - E[f(u(\\tilde y))] &= E[a u(\\tilde x) + b] - E[a u(\\tilde y) + b] \\\\
-                &= a\\left(E[u(\\tilde x)] - E[u(\\tilde y)]\\right) > 0
-                \\end{aligned}
-              \\]`}
-            </MathJax> 
+              We calculate the expected value of a gamble by multiplying each outcome by its probability and taking the sum.
+                <MathJax className='math-container'>
+                  {`\\[
+                    \\begin{aligned}
+                    EV_1 &= \\frac{1}{3}(81) +  \\frac{1}{3}(9) +  \\frac{1}{3}(0) = 30 \\\\ \\\\
+                    EV_2 &= \\frac{1}{2}(36) +  \\frac{1}{2}(16)  = 26
+                    \\end{aligned}
+                  \\]`}
+                </MathJax> 
+                Thus, gamble 1 has the higher expected value. We calculate the expected utility of a gamble by multiplying the utility of each outcome by its probability and taking the sum.
+                <MathJax className='math-container'>
+                  {`\\[
+                    \\begin{aligned}
+                    EU_1 &= \\frac{1}{3}u(81) +  \\frac{1}{3}u(9) +  \\frac{1}{3}u(0)  \\\\
+                    &= \\frac{1}{3}\\sqrt{81} +  \\frac{1}{3}\\sqrt{9} +  \\frac{1}{3}\\sqrt{0} = 4 \\\\ \\\\
+                    EU_2 &= \\frac{1}{2}u(36) +  \\frac{1}{2}u(16)  \\\\
+                    &= \\frac{1}{2}\\sqrt{36} +  \\frac{1}{2}\\sqrt{16}  = 5
+                    \\end{aligned}
+                  \\]`}
+                </MathJax>   
+                Thus, gamble 2 has the higher expected utility. The function <MathJax inline>{"\\( u(x)=\\sqrt{x} \\)"}</MathJax> is concave, so it represents risk-averse preferences.
               </p>
             </>
           }>
-            <p><strong>Example 1:</strong> Given two independent random variables <MathJax inline>{"\\( \\tilde x \\)"}</MathJax> and <MathJax inline>{"\\( \\tilde y \\)"}</MathJax>, show that, if <MathJax inline>{"\\( E[\\tilde x] > E[\\tilde y] \\)"}</MathJax>, then <MathJax inline>{"\\( E[u(\\tilde x)] > E[u(\\tilde y)] \\)"}</MathJax> for any linear utility function <MathJax inline>{"\\( u \\)"}</MathJax>. 
-            In other words, show that linear utility yields the same preferences as an expected value comparison. More generally, show that any affine transformation of a utility function preserves the same preference ordering.</p>
+            <p><strong>Example 1:</strong> Consider two gambles: the first pays $81 with probability <MathJax inline>{"\\( \\frac{1}{3} \\)"}</MathJax>, $9 with probability <MathJax inline>{"\\( \\frac{1}{3} \\)"}</MathJax>, and $0 with probability <MathJax inline>{"\\( \\frac{1}{3} \\)"}</MathJax>. The second pays $36 with probability <MathJax inline>{"\\( \\frac{1}{2} \\)"}</MathJax> and $16 with probability <MathJax inline>{"\\( \\frac{1}{2} \\)"}</MathJax>. 
+            Which gamble has the higher expected value? Given the utility function <MathJax inline>{"\\( u(x) = \\sqrt{x} \\)"}</MathJax>, which gamble has the higher expected utility? What type of preferences does this utility function represent?
+            </p>
+          </ExampleBox>
+          <ExampleBox solution={
+            <>
+              <p>
+              First, let's calculate the expected utility of this gamble.
+                <MathJax className='math-container'>
+                  {`\\[
+                    \\begin{aligned}
+                    EU &= \\frac{1}{2}u(50) +  \\frac{1}{4}u(-10) +  \\frac{1}{4}u(0) \\\\
+                    &=  \\frac{100}{2}\\left(1-e^{\\frac{-1}{2}}\\right) +  \\frac{100}{4}\\left(1-e^{\\frac{1}{10}}\\right) \\approx 17.044194
+                    \\end{aligned}
+                  \\]`}
+                </MathJax> 
+                Now, we solve the following to get the certainty equivalent:
+                <MathJax className='math-container'>
+                  {`\\[
+                    \\begin{aligned}
+                        u(CE) &= EU \\\\
+                        100\\left(1 - e^{\\frac{-CE}{100}}\\right) &= EU \\\\
+                        CE &= -100\\log\\left(1 - \\frac{EU}{100}\\right) \\\\
+                        &= -100\\log\\left(1 - \\frac{17.044194}{100}\\right) \\approx $18.69
+                    \\end{aligned}
+                  \\]`}
+                </MathJax>   
+              </p>
+            </>
+          }>
+            <p><strong>Example 2:</strong> How much would someone whose risk preferences are represented by the utility function <MathJax inline>{"\\( u(x)=100\\left(1 - e^{\\frac{-x}{100}}\\right) \\)"}</MathJax> be willing to pay for a gamble that offers $50 with probabiliy <MathJax inline>{"\\( \\frac{1}{2} \\)"}</MathJax>, -$10 with probability <MathJax inline>{"\\( \\frac{1}{4} \\)"}</MathJax>, and 
+            $0 with probability <MathJax inline>{"\\( \\frac{1}{4} \\)"}</MathJax>?
+            </p>
           </ExampleBox>
         </MathJaxContext>
         <PageNavigator group="Risk"/>

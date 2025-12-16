@@ -15,7 +15,8 @@ function Risk0() {
                     <ul className='toc-list'>
                         <li className='Risk-content'>Comparing Gambles</li>
                         <li className='Risk-content'>Expected Utility</li>
-                        <li className='Risk-content'>Examples</li>
+                        <li className='Risk-content'>Certainty Equivalent</li>
+                        <li className='TD-content'>Examples</li>
                     </ul>
                 </div>
                 <div className='content-group'>

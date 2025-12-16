@@ -315,6 +315,34 @@ function Risk2() {
           <ExampleBox solution={
             <>
               <p>
+              Linear utility takes the form <MathJax inline>{"\\( u(z) = az + b\\)"}</MathJax>. We'll use this form to show that <MathJax inline>{"\\( E[u(\\tilde x)] - E[u(\\tilde y)] >0 \\)"}</MathJax>.
+            <MathJax className='math-container'>
+              {`\\[
+                \\begin{aligned}
+                E[u(\\tilde x)] - E[u(\\tilde y)] &= E[a\\tilde x + b] - E[a\\tilde y + b] \\\\
+                &= a\\left(E[\\tilde x] - E[\\tilde y]\\right) > 0
+                \\end{aligned}
+              \\]`}
+            </MathJax> 
+            We can show the general result using the same logic. Suppose we have an arbitrary utility function <MathJax inline>{"\\( u(z)\\)"}</MathJax> and two independent random variables <MathJax inline>{"\\( \\tilde x \\)"}</MathJax> and <MathJax inline>{"\\( \\tilde y \\)"}</MathJax> with <MathJax inline>{"\\( E[u(\\tilde x)] >E[u(\\tilde y)] \\)"}</MathJax>. 
+            An affine transformation of <MathJax inline>{"\\( u \\)"}</MathJax> simply means we plug <MathJax inline>{"\\( u \\)"}</MathJax> into a function of the form <MathJax inline>{"\\( f(z) = az + b \\)"}</MathJax>. 
+            <MathJax className='math-container'>
+              {`\\[
+                \\begin{aligned}
+                E[f(u(\\tilde x))] - E[f(u(\\tilde y))] &= E[a u(\\tilde x) + b] - E[a u(\\tilde y) + b] \\\\
+                &= a\\left(E[u(\\tilde x)] - E[u(\\tilde y)]\\right) > 0
+                \\end{aligned}
+              \\]`}
+            </MathJax> 
+              </p>
+            </>
+          }>
+            <p><strong>Example 1:</strong> Given two independent random variables <MathJax inline>{"\\( \\tilde x \\)"}</MathJax> and <MathJax inline>{"\\( \\tilde y \\)"}</MathJax>, show that, if <MathJax inline>{"\\( E[\\tilde x] > E[\\tilde y] \\)"}</MathJax>, then <MathJax inline>{"\\( E[u(\\tilde x)] > E[u(\\tilde y)] \\)"}</MathJax> for any linear utility function <MathJax inline>{"\\( u \\)"}</MathJax>. 
+            In other words, show that linear utility yields the same preferences as an expected value comparison. More generally, show that any affine transformation of a utility function preserves the same preference ordering.</p>
+          </ExampleBox>
+          <ExampleBox solution={
+            <>
+              <p>
               <MathJax inline>{"\\( \\lambda_1(w) = \\lambda_2(w) \\)"}</MathJax> or <MathJax inline>{"\\( A_1(w) = A_2(w) \\)"}</MathJax> implies 
             <MathJax className='math-container'>
               {`\\[
@@ -346,7 +374,7 @@ function Risk2() {
               </p>
             </>
           }>
-            <p><strong>Example 1:</strong> Given two utility functions <MathJax inline>{"\\( u_1(w) \\)"}</MathJax> and <MathJax inline>{"\\( u_2(w) \\)"}</MathJax>, show that, if <MathJax inline>{"\\( u_1 \\)"}</MathJax> and <MathJax inline>{"\\( u_2 \\)"}</MathJax> have the same absolute or relative risk aversion, <MathJax inline>{"\\( u_2 \\)"}</MathJax> must be an affine transformation 
+            <p><strong>Example 2:</strong> Given two utility functions <MathJax inline>{"\\( u_1(w) \\)"}</MathJax> and <MathJax inline>{"\\( u_2(w) \\)"}</MathJax>, show that, if <MathJax inline>{"\\( u_1 \\)"}</MathJax> and <MathJax inline>{"\\( u_2 \\)"}</MathJax> have the same absolute or relative risk aversion, <MathJax inline>{"\\( u_2 \\)"}</MathJax> must be an affine transformation 
             of <MathJax inline>{"\\( u_1 \\)"}</MathJax>.
             </p>
           </ExampleBox>
@@ -366,7 +394,7 @@ function Risk2() {
               </p>
             </>
           }>
-            <p><strong>Example 2:</strong> Suppose I have CARA utility with <MathJax inline>{"\\( A = 0.02\\)"}</MathJax>. How much would I be willing to pay for an investment that offers $500 with probability 1/3, $250 with probability 1/3, and $0 with probability 1/3? Assume 
+            <p><strong>Example 3:</strong> Suppose I have CARA utility with <MathJax inline>{"\\( A = 0.02\\)"}</MathJax>. How much would I be willing to pay for an investment that offers $500 with probability 1/3, $250 with probability 1/3, and $0 with probability 1/3? Assume 
             I have no other investment opportunities.
             </p>
           </ExampleBox>
