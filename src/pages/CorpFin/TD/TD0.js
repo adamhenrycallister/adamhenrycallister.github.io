@@ -43,7 +43,9 @@ function TD0() {
                 <div className='content-group'>
                     <li><NavLink className='TD-link' to="/corporate_finance/time_discounting/investment_rules">Investment Decision Rules</NavLink></li>
                     <ul className='toc-list'>
-                        <li className='TD-content'>Preliminaries</li>
+                        <li className='TD-content'>Net Present Value</li>
+                        <li className='TD-content'>Internal Rate of Return</li>
+                        <li className='TD-content'>Discounted Cash Flow Analysis</li>
                         <li className='TD-content'>Examples</li>
                     </ul>
                 </div>

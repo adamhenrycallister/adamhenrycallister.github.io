@@ -508,7 +508,8 @@ function irrBinarySearch(
       <p>
       Use the calculator below to calculate the NPV of different cash flow schedules. Choose up to 10 forecasted cash flow periods and a terminal value method. The IRR is shown if it exists and is less than 50%. 
       </p>
-      <div>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+      <div style={{padding: "10px", fontWeight: "600", fontSize: "1.2rem"}}>NPV Calculator</div>
       <div className="calc_button_container">
         <div>
         <div className="input-bars">
@@ -673,25 +674,27 @@ function irrBinarySearch(
             )}
             </div>
           </div>
-          <div style={{ paddingTop: "10px"}}>
-          {irr_answer === null && (
-          <MathJax className='math-container'>
-            {`\\[
-              \\begin{aligned}
-              ${latex}
-              \\end{aligned}
-            \\]`}
-          </MathJax>
-          )}
-          {irr_answer !== null && (
-          <MathJax className='math-container'>
-            {`\\[
-              \\begin{aligned}
-              ${latex + '\\\\ \\\\ IRR &= ' + (irr_answer * 100).toFixed(2) + '\\%'}
-              \\end{aligned}
-            \\]`}
-          </MathJax>
-          )}
+          <div style={{ paddingTop: "10px" }}>
+            {irr_answer === null && (
+              <MathJax dynamic className="math-container">
+                {`\\[
+                  \\begin{aligned}
+                  ${latex}
+                  \\end{aligned}
+                \\]`}
+              </MathJax>
+            )}
+
+            {irr_answer !== null && (
+              <MathJax dynamic className="math-container">
+                {`\\[
+                  \\begin{aligned}
+                  ${latex} \\\\ \\\\
+                  IRR &= ${(irr_answer * 100).toFixed(2)}\\%
+                  \\end{aligned}
+                \\]`}
+              </MathJax>
+            )}
           </div>
         </div>
       </div>
