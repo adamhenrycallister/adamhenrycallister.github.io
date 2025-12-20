@@ -16,92 +16,6 @@ function maxRho(r12, r13) {
   return r12 * r13 + Math.sqrt((1 - r12 ** 2) * (1 - r13 ** 2));
 }
 
-function alphaShapeEdges(points, alpha) {
-  if (points.length < 4) return [];
-
-  const delaunay = d3.Delaunay.from(points);
-  const { triangles } = delaunay;
-
-  const edgeCount = new Map();
-
-  const addEdge = (i, j) => {
-    const key = i < j ? `${i},${j}` : `${j},${i}`;
-    edgeCount.set(key, (edgeCount.get(key) || 0) + 1);
-  };
-
-  for (let t = 0; t < triangles.length; t += 3) {
-    const i0 = triangles[t];
-    const i1 = triangles[t + 1];
-    const i2 = triangles[t + 2];
-
-    const A = points[i0];
-    const B = points[i1];
-    const C = points[i2];
-
-    const a = Math.hypot(B[0] - C[0], B[1] - C[1]);
-    const b = Math.hypot(A[0] - C[0], A[1] - C[1]);
-    const c = Math.hypot(A[0] - B[0], A[1] - B[1]);
-
-    const s = (a + b + c) / 2;
-    const area2 = s * (s - a) * (s - b) * (s - c);
-    if (area2 <= 0) continue;
-
-    const area = Math.sqrt(area2);
-    const circumradius = (a * b * c) / (4 * area);
-
-    if (circumradius < alpha) {
-      addEdge(i0, i1);
-      addEdge(i1, i2);
-      addEdge(i2, i0);
-    }
-  }
-
-  // Boundary edges appear exactly once
-  return [...edgeCount.entries()]
-    .filter(([, count]) => count === 1)
-    .map(([key]) => key.split(",").map(Number));
-}
-
-function stitchLoops(edges) {
-  const adj = new Map();
-
-  edges.forEach(([a, b]) => {
-    if (!adj.has(a)) adj.set(a, []);
-    if (!adj.has(b)) adj.set(b, []);
-    adj.get(a).push(b);
-    adj.get(b).push(a);
-  });
-
-  const loops = [];
-  const visited = new Set();
-
-  edges.forEach(([start]) => {
-    if (visited.has(start)) return;
-
-    const loop = [start];
-    let prev = null;
-    let curr = start;
-
-    while (true) {
-      visited.add(curr);
-      const neighbors = adj.get(curr).filter(n => n !== prev);
-      if (!neighbors.length) break;
-
-      const next = neighbors[0];
-      prev = curr;
-      curr = next;
-
-      if (curr === start) break;
-      loop.push(curr);
-    }
-
-    if (loop.length > 2) loops.push(loop);
-  });
-
-  return loops;
-}
-
-
 // Sample simplex of weights
 function sampleWeights(steps = 25) {
   const weights = [];
@@ -144,16 +58,8 @@ export default function ThreeAssetCombinations() {
   const r23Max = maxRho(r12, r13);
   const r23 = clamp(r23Min, r23Max, r23Raw);
 
-
-  const det = corrDeterminant(r12, r13, r23);
-
-  // tolerance for numerical stability
-  const EPS = 1e-3;
-
-  const useConvexHull = det < EPS;
-
   const steps = 20;
-  const alphaVal = 35;
+
 
   useEffect(() => {
     if (r23Raw !== r23) {
@@ -236,27 +142,18 @@ export default function ThreeAssetCombinations() {
     [a1.sigma, a2.sigma, a3.sigma, r12, r13, r23]
   );
 
-  const hullEdges = useMemo(() => {
-    if (useConvexHull) {
-      const hull = d3.polygonHull(
-        pts.map((p, i) => [...p, i])
-      );
-      if (!hull) return [];
-      return hull.map((_, i) => [
-        hull[i][2],
-        hull[(i + 1) % hull.length][2]
-      ]);
-    } else {
-      return alphaShapeEdges(pts, alphaVal);
-    }
-  }, [geometryKey, useConvexHull]);
+  const hullPath = useMemo(() => {
+    if (pts.length < 3) return null;
 
+    const hull = d3.polygonHull(pts);
+    if (!hull) return null;
 
-  const alphaLoops = useMemo(
-    () => stitchLoops(hullEdges),
-    [hullEdges]
-  );
-
+    return (
+      "M" +
+      hull.map(p => `${p[0]},${p[1]}`).join("L") +
+      "Z"
+    );
+  }, [pts, geometryKey]);
 
   // Drag behavior
   const makeDrag = setter => {
@@ -296,24 +193,13 @@ export default function ThreeAssetCombinations() {
           Mean Return
         </text>
 
-        <path
-          d={alphaLoops
-            .map(loop =>
-              "M" +
-              loop
-                .map(i => [
-                  xScale(feasibleSigma[i]),
-                  yScale(feasibleMu[i])
-                ].join(","))
-                .join("L") +
-              "Z"
-            )
-            .join(" ")
-          }
-          fill="steelblue"
-          opacity={0.25}
-          fillRule="evenodd"
-        />
+        {hullPath && (
+          <path
+            d={hullPath}
+            fill="steelblue"
+            opacity={0.25}
+          />
+        )}
 
         {/* Asset 1 */}
         <circle
