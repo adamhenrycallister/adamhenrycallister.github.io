@@ -9,7 +9,7 @@ function Risk2() {
   return (
         <div className='Risk'>
         <PageNavigator group="Risk" />
-            <p className='heading1'>Risk Aversion</p>
+            <p className='heading1'>Risk Aversion Measures</p>
         	<MathJaxContext>
         	<p className='heading2'>Concavity</p>
             <p>

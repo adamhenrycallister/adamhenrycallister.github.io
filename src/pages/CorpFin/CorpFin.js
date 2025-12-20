@@ -23,7 +23,9 @@ function CorpFin() {
                     <li><NavLink className='CorpFin-link' to="/corporate_finance/risk">Risk</NavLink></li>
                     <ul className='toc-list'>
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/intro">Introduction</NavLink></li>
-                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/risk_aversion">Risk Aversion</NavLink></li>
+                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/risk_aversion">Risk Aversion Measures</NavLink></li>
+                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/diversification">Diversification</NavLink></li>
+                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/efficient_frontier">Efficient Frontier</NavLink></li>
                     </ul>
                     <li><NavLink className='CorpFin-link' to="/corporate_finance/black_scholes">Black-Scholes</NavLink></li>
                     <ul className='toc-list'>
