@@ -47,6 +47,17 @@ function Risk0() {
                         <li className='Risk-content'>Risk-Free Asset</li>
                     </ul>
                 </div>
+                <div className='content-group'>
+                    <li><NavLink className='Risk-link' to="/corporate_finance/risk/capm">CAPM</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='Risk-content'>CAPM Assumptions</li>
+                        <li className='Risk-content'>Optimal Portfolio</li>
+                        <li className='Risk-content'>Market Portfolio</li>
+                        <li className='Risk-content'>Beta</li>
+                        <li className='Risk-content'>Diversifiable vs. Systematic Risk</li>
+                        <li className='Risk-content'>Capital Market Line and Security Market Line</li>
+                    </ul>
+                </div>
             </ul>
             </div>
     	<PageNavigator group="Risk"/>

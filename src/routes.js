@@ -20,6 +20,7 @@ const routes = [
   { title: "Risk Aversion Measures", path: "/corporate_finance/risk/risk_aversion", component: "Risk2", group: "Risk", course: "CorpFin" },
   { title: "Diversification", path: "/corporate_finance/risk/diversification", component: "Risk3", group: "Risk", course: "CorpFin" },
   { title: "Efficient Frontier", path: "/corporate_finance/risk/efficient_frontier", component: "Risk4", group: "Risk", course: "CorpFin" },
+  { title: "CAPM", path: "/corporate_finance/risk/capm", component: "Risk5", group: "Risk", course: "CorpFin" },
   { title: "Contents", path: "/fourier", component: "Fourier0", group: "Fourier", course: "Misc"  },
   { title: "Complex Numbers", path: "/fourier/complex_numbers", component: "Fourier1", group: "Fourier", course: "Misc"   },
   { title: "Fourier Series", path: "/fourier/series", component: "Fourier2", group: "Fourier", course: "Misc"   },

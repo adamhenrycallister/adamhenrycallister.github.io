@@ -3,7 +3,7 @@ import './Risk.css';
 import { NavLink } from 'react-router-dom';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import PageNavigator from "../../../components/PageNavigator";
-import ExampleBox from "../../../components/ExampleBox";
+// import ExampleBox from "../../../components/ExampleBox";
 import TwoStockCombinations from "./TwoStockCombinations";
 import ThreeStockCombinations from "./ThreeStockCombinations";
 import CapLine from "./CapLine";
@@ -40,7 +40,7 @@ function Risk4() {
         What is the mean return and return variance of my portfolio?
         </p>
         <p>
-        To find the mean portfolio return, I simply I apply the weights (<MathJax inline>{"\\( w_y \\)"}</MathJax> and <MathJax inline>{"\\( w_z \\)"}</MathJax>) to the mean return of each individual stock.
+        To find the mean portfolio return, I simply apply the weights (<MathJax inline>{"\\( w_y \\)"}</MathJax> and <MathJax inline>{"\\( w_z \\)"}</MathJax>) to the mean return of each individual stock.
         <MathJax className='math-container'>
           {`\\[
             \\begin{aligned}
@@ -66,7 +66,7 @@ function Risk4() {
         </p>
         <p className='heading2'>Diversification</p>
         <p>
-        Recall the discussion on the last page about how diversification can reduce variance as long as the correlation coefficient is less than 1. Let's look at what that means in terms our equation for portfolio variance. 
+        Recall the discussion on the last page about how diversification can reduce variance as long as the correlation coefficient is less than 1. Let's look at what that means in terms of our equation for portfolio variance. 
         First, we'll assume that both companies have the same variance (<MathJax inline>{"\\( \\sigma^2 = \\sigma_y^2 = \\sigma_z^2 \\)"}</MathJax> and <MathJax inline>{"\\( \\sigma = \\sigma_y = \\sigma_z \\)"}</MathJax>).
         Then, our portfolio variance becomes
         <MathJax className='math-container'>
@@ -92,7 +92,7 @@ function Risk4() {
         What are all the possible mean return and return variance combinations that we can achieve with 2 stocks? Using our equations for the mean portfolio return and portfolio variance, we can vary the weights to map out all the possibilites. 
         Let's suppose the mean return of company Y's stock is higher than the mean return of company Z's stock (<MathJax inline>{"\\( \\bar R_y > \\bar R_z \\)"}</MathJax>). Since the mean portfolio return is a linear combination of the individual stock returns, we can achieve any 
         return between <MathJax inline>{"\\( \\bar R_z \\)"}</MathJax> and <MathJax inline>{"\\( \\bar R_y \\)"}</MathJax> simply by choosing the right weights (<MathJax inline>{"\\( w_y \\)"}</MathJax> and <MathJax inline>{"\\( w_z \\)"}</MathJax>). The range of possible portfolio variances 
-        depends on the correlation in addition to the weights. The graph below plots the possible mean portfolio returns and portfolio variances of two stocks based on the mean return, standard deviation, and correlation of each stock. 
+        depends on the correlation between the two stock returns in addition to the weights. The graph below plots the possible mean returns and standard deviations of a portfolio with two stocks based on the mean return, standard deviation, and correlation of each stock. 
         </p>
         <div style={{
               display: 'flex',
@@ -156,7 +156,7 @@ function Risk4() {
         With only two assets, the set of feasible portfolios is a line between the two asset points. With three assets, we can form an area of feasible portfolios. When all three correlations are equal to 1, the feasible set becomes a triangle with the three asset points as vertices. 
         </p>
         <p>
-        Just as before, a risk-averse investor will not prefer a portfolio that has both higher risk and lower expected return than another available portfolio. On the graph, such portfolios lie to the southeast of a dominating portfolio and are therefore suboptimal. If we eliminate all dominated portfolios and retain only those that offer the highest expected return for each level of risk, the remaining boundary is the efficient frontier.
+        Just as before, a risk-averse investor will not prefer a portfolio that has both higher risk and lower expected return than another available portfolio. On the graph, such portfolios lie to the southeast of a dominating portfolio and are therefore suboptimal. If we eliminate all dominated portfolios and retain only those that offer the highest expected return for each level of risk, the remaining boundary is called the efficient frontier.
         </p>
         <p className='heading2'>Risk-Free Asset</p>
         <p>
