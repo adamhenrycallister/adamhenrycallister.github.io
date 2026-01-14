@@ -34,8 +34,8 @@ function Risk4() {
         portfolio by investing in many different assets. 
         </p>
         <p>
-        Suppose we have the option to invest in company Y and company Z, which have returns <MathJax inline>{"\\( R_y \\)"}</MathJax> and <MathJax inline>{"\\( R_z \\)"}</MathJax> respectively. The mean return of each company's stock is 
-         <MathJax inline>{"\\( E[R_y] = \\bar R_y \\)"}</MathJax> and <MathJax inline>{"\\( E[R_z] = \\bar R_z \\)"}</MathJax>. Company Y's stock has a return variance of <MathJax inline>{"\\( \\text{var}(R_y) = \\sigma^2_y \\)"}</MathJax>, and company Z's stock has a return variance of <MathJax inline>{"\\( \\text{var}(R_z)= \\sigma^2_z \\)"}</MathJax>. 
+        Suppose we have the option to invest in company Y and company Z, which have returns <MathJax inline>{"\\( R_y \\)"}</MathJax> and <MathJax inline>{"\\( R_z \\)"}</MathJax> respectively. The mean return of each company's stock is <MathJax inline>{"\\( E[R_y] = \\bar R_y \\)"}</MathJax> and <MathJax inline>{"\\( E[R_z] = \\bar R_z \\)"}</MathJax>. 
+        Company Y's stock has a return variance of <MathJax inline>{"\\( \\text{var}(R_y) = \\sigma^2_y \\)"}</MathJax>, and company Z's stock has a return variance of <MathJax inline>{"\\( \\text{var}(R_z)= \\sigma^2_z \\)"}</MathJax>. 
         The two stocks have a correlation coefficient of <MathJax inline>{"\\( \\rho_{y,z} \\)"}</MathJax>. I can form a portfolio by investing a <MathJax inline>{"\\( w_y \\)"}</MathJax> proportion of my wealth in company Y and a <MathJax inline>{"\\( w_z = 1 - w_y \\)"}</MathJax> proportion of my wealth in company Z. 
         What is the mean return and return variance of my portfolio?
         </p>
@@ -193,6 +193,7 @@ function Risk4() {
             \\end{aligned}
           \\]`}   
         </MathJax> 
+        The slope of this line is called the Sharpe ratio, which measures how much return an asset offers scaled by its risk. 
         </p>
         <p>
         Using the line created with a risk-free asset and a risky asset, we can create an optimal set of risk/return combinations. 

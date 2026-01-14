@@ -58,6 +58,25 @@ function Risk0() {
                         <li className='Risk-content'>Capital Market Line and Security Market Line</li>
                     </ul>
                 </div>
+                <div className='content-group'>
+                    <li><NavLink className='Risk-link' to="/corporate_finance/risk/capm_reg">CAPM and Regression</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='Risk-content'>Estimating Beta</li>
+                        <li className='Risk-content'>What about Alpha?</li>
+                        <li className='Risk-content'>Testing the CAPM</li>
+                        <li className='Risk-content'>Limitations</li>
+                    </ul>
+                </div>
+                <div className='content-group'>
+                    <li><NavLink className='Risk-link' to="/corporate_finance/risk/factor_models">Factor Models</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='Risk-content'>Fama-French Three-Factors</li>
+                        <li className='Risk-content'>Constructing Factors</li>
+                        <li className='Risk-content'>Interpreting Model Coefficients</li>
+                        <li className='Risk-content'>Example</li>
+                        <li className='Risk-content'>Other Factors</li>
+                    </ul>
+                </div>
             </ul>
             </div>
     	<PageNavigator group="Risk"/>

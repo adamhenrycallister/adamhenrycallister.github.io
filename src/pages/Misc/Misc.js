@@ -11,13 +11,13 @@ function Misc() {
             <div style={{ display: "flex", paddingLeft: "10vw"}}>
             <ul className='toc-list'>
                 <div className='content-group'>
-                    <li><NavLink className='Misc-link' to="/fourier">Fourier Transform</NavLink></li>
+                    <li><NavLink className='Misc-link' to="/stats">Statistics</NavLink></li>
                     <ul className='toc-list'>
-                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/complex_numbers">Complex Numbers</NavLink></li>
-                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/series">Fourier Series</NavLink></li>
-                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/transform">Fourier Transform</NavLink></li>
-                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/heat_equation">Heat Equation</NavLink></li>
-                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/discrete">Discrete Fourier Transform</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/stats/single_random_variable">Single Random Variable</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/stats/multiple_random_variable">Multiple Random Variables</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/stats/samples">Samples</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/stats/regression">Regression</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/stats/multivariate_regression">Regression with Multiple Variables</NavLink></li>
                     </ul>               
                 </div>
                 <div className='content-group'>
@@ -25,6 +25,16 @@ function Misc() {
                     <ul className='toc-list'>
                         <li className='TD-content'><NavLink className='Misc-sublink' to="/mortgages/points">Points</NavLink></li>
                         <li className='TD-content'><NavLink className='Misc-sublink' to="/mortgages/points_calculator">Points Calculator</NavLink></li>
+                    </ul>               
+                </div>
+                <div className='content-group'>
+                    <li><NavLink className='Misc-link' to="/fourier">Fourier Transform</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/complex_numbers">Complex Numbers</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/series">Fourier Series</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/transform">Fourier Transform</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/heat_equation">Heat Equation</NavLink></li>
+                        <li className='TD-content'><NavLink className='Misc-sublink' to="/fourier/discrete">Discrete Fourier Transform</NavLink></li>
                     </ul>               
                 </div>
             </ul>

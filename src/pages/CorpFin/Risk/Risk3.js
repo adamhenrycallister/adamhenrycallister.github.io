@@ -38,7 +38,7 @@ function Risk3() {
           <li><MathJax inline>{"\\( Pr(A \\cap B) \\)"}</MathJax></li>
           <li><MathJax inline>{"\\( Pr(A) - Pr(A \\cap B) \\)"}</MathJax></li>
           <li><MathJax inline>{"\\( Pr(B) - Pr(A \\cap B) \\)"}</MathJax></li>
-          <li><MathJax inline>{"\\( 1 - Pr(A) - Pr(B) - Pr(A \\cap B)  \\)"}</MathJax></li>
+          <li><MathJax inline>{"\\( 1 - Pr(A) - Pr(B) + Pr(A \\cap B)  \\)"}</MathJax></li>
         </ol>
         <p>
         Let's suppose knowing whether company A's product succeeds does not tell us anything about whether company B's product succeeds (i.e., these are independent events). If we know company A's product succeeds, then we are either in outcome 1 or 2. 
@@ -74,7 +74,7 @@ function Risk3() {
               <p><MathJax inline>{"\\( Pr(A) = 0 \\implies \\)"}</MathJax></p>
               <ol start="3">
                 <li><MathJax inline>{"\\( Pr(B) - Pr(A \\cap B) \\rightarrow Pr(B) \\)"}</MathJax></li>
-                <li><MathJax inline>{"\\( 1 - Pr(A) - Pr(B) - Pr(A \\cap B) \\rightarrow 1 - Pr(B) \\)"}</MathJax></li>
+                <li><MathJax inline>{"\\( 1 - Pr(A) - Pr(B) + Pr(A \\cap B) \\rightarrow 1 - Pr(B) \\)"}</MathJax></li>
               </ol>
             </div>
           </div>
@@ -122,7 +122,7 @@ function Risk3() {
             </tr>
             <tr className="table-row">
               <td className="table-entry">Both companies' products fail</td>
-              <td className="table-entry"><MathJax inline>{"\\( 1 - Pr(A) - Pr(B) - Pr(A \\cap B) \\)"}</MathJax></td>
+              <td className="table-entry"><MathJax inline>{"\\( 1 - Pr(A) - Pr(B) + Pr(A \\cap B) \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
@@ -210,7 +210,7 @@ function Risk3() {
             </tr>
             <tr className="table-row">
               <td className="table-entry">Both companies' products fail</td>
-              <td className="table-entry"><MathJax inline>{"\\( 1 - 2p - q \\)"}</MathJax></td>
+              <td className="table-entry"><MathJax inline>{"\\( 1 - 2p + q \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
             </tr>
@@ -280,7 +280,7 @@ function Risk3() {
             </tr>
             <tr className="table-row">
               <td className="table-entry">Both companies' products fail</td>
-              <td className="table-entry"><MathJax inline>{"\\( 1 - 2p - q \\)"}</MathJax></td>
+              <td className="table-entry"><MathJax inline>{"\\( 1 - 2p + q \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
               <td className="table-entry"><MathJax inline>{"\\( 0 \\)"}</MathJax></td>
