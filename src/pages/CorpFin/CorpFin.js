@@ -30,6 +30,10 @@ function CorpFin() {
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/capm_reg">CAPM and Regression</NavLink></li>
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/risk/factor_models">Factor Models</NavLink></li>
                     </ul>
+                    <li><NavLink className='CorpFin-link' to="/corporate_finance/capital_structure">Capital Structure</NavLink></li>
+                    <ul className='toc-list'>
+                        <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/capital_structure/mm">Modigliani and Miller Theorem</NavLink></li>
+                    </ul>
                     <li><NavLink className='CorpFin-link' to="/corporate_finance/black_scholes">Black-Scholes</NavLink></li>
                     <ul className='toc-list'>
                         <li className='TD-content'><NavLink className='CorpFin-sublink' to="/corporate_finance/black_scholes/preliminaries">Preliminaries</NavLink></li>

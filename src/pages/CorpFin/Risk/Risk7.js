@@ -500,7 +500,7 @@ function Risk7() {
         <p className='heading2'>Example</p>
         <p>
         Let's use the Fama-French three-factor model to predict returns of <a className='inline-link' href="https://finance.yahoo.com/quote/SPOT/history/" target="_blank" rel="noopener noreferrer">Spotify</a> stock during 2019 and 2020 (Spotify <a className='inline-link' href="https://corpgov.law.harvard.edu/2018/04/26/a-look-under-the-hood-of-spotifys-direct-listing/" target="_blank" rel="noopener noreferrer">went public</a> in April 2018). 
-        We have following stock price values and <a className='inline-link' href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library_202412_archive.html" target="_blank" rel="noopener noreferrer">Fama-French factors</a> during the time period: 
+        We have the following stock price values and <a className='inline-link' href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library_202412_archive.html" target="_blank" rel="noopener noreferrer">Fama-French factors</a> during the time period: 
         </p>
         <div className="table-wrapper">
           <table className="my-table">

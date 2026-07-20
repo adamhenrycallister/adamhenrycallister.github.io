@@ -6,7 +6,7 @@ function Research() {
     	<div className='Research'>
     		<p className='heading1'>Dissertation</p>
 
-    		<p className='article'><a className='link' href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5375703' target="_blank">Pricing in Securities Fraud</a> (Job Talk Paper)</p>
+    		<p className='article'><a className='link' href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5375703' target="_blank">Pricing in Securities Fraud</a></p>
     		<p className='abstract'>
           Calculating damages in securities fraud class actions typically involves comparing the price investors
           actually paid for their shares with the hypothetical price they would have paid had the fraud not occurred.

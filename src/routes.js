@@ -23,6 +23,8 @@ const routes = [
   { title: "CAPM", path: "/corporate_finance/risk/capm", component: "Risk5", group: "Risk", course: "CorpFin" },
   { title: "CAPM and Regression", path: "/corporate_finance/risk/capm_reg", component: "Risk6", group: "Risk", course: "CorpFin" },
   { title: "Factor Models", path: "/corporate_finance/risk/factor_models", component: "Risk7", group: "Risk", course: "CorpFin" },
+  { title: "Contents", path: "/corporate_finance/capital_structure", component: "CS0", group: "CS", course: "CorpFin"  },
+  { title: "Modigliani and Miller Theorem", path: "/corporate_finance/capital_structure/mm", component: "CS1", group: "CS", course: "CorpFin"  },
   { title: "Contents", path: "/fourier", component: "Fourier0", group: "Fourier", course: "Misc"  },
   { title: "Complex Numbers", path: "/fourier/complex_numbers", component: "Fourier1", group: "Fourier", course: "Misc"   },
   { title: "Fourier Series", path: "/fourier/series", component: "Fourier2", group: "Fourier", course: "Misc"   },

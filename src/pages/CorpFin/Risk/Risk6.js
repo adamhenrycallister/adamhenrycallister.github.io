@@ -333,7 +333,7 @@ function Risk6() {
           </table>
         </div>
         <p>
-        First, we need to calculate the monthly return of Google stock and the S&P 500 during 2018 and 2019. Recall that the period <MathJax inline>{"\\( t \\)"}</MathJax> return is given by 
+        Next, we need to calculate the monthly return of Google stock and the S&P 500 during 2018 and 2019. Recall that the period <MathJax inline>{"\\( t \\)"}</MathJax> return is given by 
         <MathJax className='math-container'>
           {`\\[
             \\begin{aligned}

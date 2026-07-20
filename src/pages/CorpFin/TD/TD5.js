@@ -138,8 +138,8 @@ function TD5() {
         <MathJax className='math-container'>
           {`\\[
             \\begin{aligned}
-            P_t = \\frac{C}{1 + s_1} + \\frac{C}{(1 + s_2)^2}  + \\dots + \\frac{C}{(1 + s_{t-1})^{t-1}}  + \\frac{FV + C}{(1 + s_t)^t} \\\\
-            \\Leftrightarrow s_t = \\left(\\frac{FV +C}{P_t - \\sum^{t-1}_{i=1}\\frac{C}{(1 + s_1)^i}}\\right)^{\\frac{1}{t}} - 1
+            P_t &= \\frac{C}{1 + s_1} + \\frac{C}{(1 + s_2)^2}  + \\dots + \\frac{C}{(1 + s_{t-1})^{t-1}}  + \\frac{FV + C}{(1 + s_t)^t} \\\\
+            \\Leftrightarrow s_t &= \\left(\\frac{FV +C}{P_t - \\sum^{t-1}_{i=1}\\frac{C}{(1 + s_i)^i}}\\right)^{\\frac{1}{t}} - 1
             \\end{aligned}
           \\]`}
         </MathJax>  

@@ -315,7 +315,7 @@ function Risk3() {
             \\end{aligned}
           \\]`}
         </MathJax> 
-        If <MathJax inline>{"\\( q = 0 \\)"}</MathJax>, then the correlation coefficient reduces to <MathJax inline>{"\\(  \\text{corr}_{Z_A,Z_B} = \\frac{- p}{1 - p} \\)"}</MathJax>. In this case, the outcomes are perfectly negativley correlated. If <MathJax inline>{"\\( q = p \\)"}</MathJax>, then 
+        If <MathJax inline>{"\\( q = 0 \\)"}</MathJax>, then the correlation coefficient reduces to <MathJax inline>{"\\(  \\text{corr}_{Z_A,Z_B} = \\frac{- p}{1 - p} \\)"}</MathJax>. In this case, the outcomes are negativley correlated, with perfect negative correlation if <MathJax inline>{"\\( p = \\frac{1}{2} \\)"}</MathJax>. If <MathJax inline>{"\\( q = p \\)"}</MathJax>, then 
         the correlation coefficient is 1, and the outcomes are perfectly positively correlated. Note that the correlation coefficient will always be between -1 and 1. 
         </p>
         <p>

@@ -197,7 +197,7 @@ function Stats1() {
         </MathJax>
         </p>
         <p>
-        To calculate the variance using the expression after the first equal, you can subtract the mean from each original outcome, square the result, and then take the expected value using these newly calculated outcomes. 
+        To calculate the variance using the expression after the first equal sign, you can subtract the mean from each original outcome, square the result, and then take the expected value using these newly calculated outcomes. 
         In the case of rolling two dice, this variance calculation method looks like
         </p>
         <div className="table-wrapper">

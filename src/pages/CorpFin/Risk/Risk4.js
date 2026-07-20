@@ -202,7 +202,7 @@ function Risk4() {
         </p>
         <p>
         We can start by considering only risky assets along the efficient frontier. The best risky asset lies at the point where a straight line passing through the y-axis at the risk-free return is tangent to the efficient frontier. 
-        The graph below shows the efficient frontier using two risky assets and the line connecting the risk-free return to the portfolio tangent to the efficient frontier. This green dotted line is called the capital market line. For each risk level, the capital market line offers 
+        The graph below shows the efficient frontier using two risky assets. The green dotted line connecting the risk-free return to the portfolio tangent to the efficient frontier is called the capital market line. For each risk level, the capital market line offers 
         the highest possible mean return acheivable through creating a portfolio with the available assets. 
         </p>
         <div style={{
